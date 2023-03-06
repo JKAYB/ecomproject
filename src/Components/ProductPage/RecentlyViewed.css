@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.recents-main{
+    width: 80vw;
+    height: 500px;
+    margin-left: 10vw;
+}
+.recents-head{
+    margin-top: 30px;
+    color: #1E293B;
+}
+.recent-products{
+    text-transform: capitalize;
+    display: flex;
+    height:430px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 30px;
+    cursor: pointer;
+    transition:  200ms ease-out;
+}
+
+
+.recent-products::-webkit-scrollbar{
+    display: none;
+}
+
+.product-container{
+    border-radius: 6px;
+    min-width:225px;
+    overflow: hidden;
+    height: 380px;
+    background-color: white;
+    margin-right: 20px;
+}
+
+.product{
+    height: 250px;
+    margin-right: 30px;
+    width: 225px;
+    border-radius: 5px;
+    transition:  150ms linear;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.recent-details-detail{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color:#64748B;
+    
+}
+.recent-details{
+    text-align: center;
+    padding-top: 5px;
+    color: #1E293B;
+    font-size: 18px;
+    
+}
+
+.color-selection-recents{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.color-recents{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+}

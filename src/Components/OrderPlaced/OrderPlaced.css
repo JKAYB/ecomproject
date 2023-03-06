@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.orderPlaced{
+    background-color: #F5F5F5;
+    padding-top: 10px;
+    scroll-behavior: smooth;
+}
+
+
+.orderPlaced-container{
+    height: 600px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.tick-icon{
+    height: 100px;
+    width: 100px;
+}
+
+.head-orderplaced{
+    font-size: 40px;
+    color: #1E293B;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+.thanks-order{
+    margin-top: 20px;
+    color: #64748B;
+    font-weight: 100;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-family: sans-serif;
+}
+
+.check-status-order{
+    margin-top: 40px;
+    width: 374px;
+    height: 78px;
+    background-color: #E89F71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.check-status-order:hover{
+    background-color: #ff7824;
+    transition: 50ms ease-in-out;
+}

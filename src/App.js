@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import LandingPage from "./Components/LandingPage/LandingPage";
+import ProductPage from "./Components/ProductPage/ProductPage";
+import CartPage from "./Components/CartPage/CartPage";
+import {Routes,Route} from 'react-router-dom'
+import OrderPlaced from "./Components/OrderPlaced/OrderPlaced";
+import {StateContext} from '../src/Context/StateContext'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <StateContext>
+        <Routes>
+        <Route path= "/" exact element = {<LandingPage/>} />
+          <Route path= "/home" exact element = {<LandingPage/>} />
+          <Route path= "/product/:id" exact element = {<ProductPage/>} /> 
+          <Route path= "/cart/:id" exact element = {<CartPage/>} />   
+          <Route path= "/cart" exact element = {<CartPage/>} />   
+          <Route path= "/orderplaced" exact element = {<OrderPlaced/>} />   
+        </Routes>
+        </StateContext>
+  </div>
+  )
 }
 
 export default App;

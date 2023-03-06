@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.collage{
+  position: relative;
+  width: 100%;
+  height: 880px;
+  margin-top: 60px;
+}
+.title-share{
+  margin-top: 20px;
+    height: 30px;
+    color: #616161;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.products-head-share{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    color:#3A3A3A;
+    line-height: 120%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.imageGrids{
+    display :flex;
+    gap:11px;
+    height: 350px;
+    position: absolute;
+}
+
+.imageGrids > *:nth-child(1){
+  margin-top: -60px;
+}
+.imageGrids > *:nth-child(2){
+  margin-top: 0px;
+  width: 500px;
+}
+.imageGrids > *:nth-child(3){
+  margin-top: 90px;
+  height: 400px;
+  max-width: 255px;
+}
+.imageGrids > *:nth-child(4){
+  margin-top: 20px;
+  max-width: 290px;
+  height: 400px;
+}
+.imageGrids > *:nth-child(5){
+  margin-top: -60px;
+  height: 480px;
+  width: 132px;
+}
+
+.imageGrids2{
+  gap:10px;
+  display :flex;
+
+}
+  
+.imageGrids2 > *:nth-child(1){
+    margin-top: 370px;
+    height: 350px;
+    width: 340px;
+}
+
+.imageGrids2 > *:nth-child(2){
+    margin-top: 370px;
+    height: 280px;
+    width: 380px;
+}
+.imageGrids2 > *:nth-child(3){
+  margin-top: 440px;
+  margin-left: 270px;
+  height: 260px;
+  width: 200px;
+}
+.imageGrids2 > *:nth-child(4){
+  margin-top: 440px;
+  height: 200px;
+  width: 220px;
+}
