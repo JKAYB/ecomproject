@@ -13,6 +13,7 @@ import RecentlyViewed from "./RecentlyViewed";
 import Tablist from "./Tablist";
 import axios from "axios";
 import video from '../../Icon/loading.gif'
+import cartImg from '../../Icon/addedToCart.gif'
 
 const data1 = "Our best product ";
 const data2 = "Suitable only in dry areas";
@@ -47,18 +48,27 @@ const proPic4 =
 
 function ProductPage() {
   const { isLoading ,incQty , addItemToCart} = useStateContext();
-
-
   const { id } = useParams();
 
+  const [sucess, setSucess] = useState(false);
   const [product, setProduct] = useState([]);
 
   function combined(product){
     incQty();
     addItemToCart(product);
+    handleSuccess();
+
 
 }
- 
+function handleSuccess() {
+  setSucess(true);
+  console.log(sucess)
+
+  setTimeout(() => {
+    setSucess(false);
+  }, 1600);
+}
+
 
   useEffect(() => {
     axios
@@ -152,18 +162,27 @@ function ProductPage() {
             }
           </div>
           <div className="cartDiv">
-            <img className="wishlist-icon" src={wish} alt="wishlist"></img>
+          <img className="wishlist-icon" src={wish} alt="wishlist"></img>
+
+          { sucess && (
+                     <img src={cartImg} alt='AddedToCart' className="success-message"></img>
+
+                    )}
             {
                 product.stock>0?( 
+                    
                     <button onClick={() => combined({product})} className="addToCartButton">
                         Add to cart
                     </button>
+                    
 
                 ):(
                     <div className="notInStock">Temporarily out of stock</div>
                 )
+                
 
             }
+           
          
 
           </div>

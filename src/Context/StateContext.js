@@ -71,6 +71,10 @@ export const StateContext = ({children})=>{
         setQty( qty-(data.product.quantity))
       };
     
+      const resetCart = ()=>{
+        setCartItems([]);
+        setQty(0)
+      }
 
     const getProducts = async (url) =>{
                  dispatch({type:"SET_LOADING"})
@@ -106,7 +110,6 @@ export const StateContext = ({children})=>{
     
 
     const incQty=()=>{
-        //console.log(cartItems.reduce((n,o)=>n + o.product.quantity))
         setQty((prevQty)=> prevQty+1) ;
     }
 
@@ -133,7 +136,8 @@ export const StateContext = ({children})=>{
                 cartItems,
                 increaseCartItem,
                 decreaseCartItem,
-                removeItem
+                removeItem,
+                resetCart
                 
         }}>
             {children}

@@ -19,6 +19,7 @@ function CartPage() {
     cartItems,
     increaseCartItem,
     decreaseCartItem,
+    resetCart
   } = useStateContext();
 
   const { id } = useParams();
@@ -27,7 +28,6 @@ function CartPage() {
   const [price, setPrice] = useState(0);
 
   function handleClick() {
-    // if(quantity>)
     setShowWarning(true);
 
     setTimeout(() => {
@@ -35,8 +35,13 @@ function CartPage() {
     }, 1000);
   }
 
+ 
+
+  
+
   const navigate = useNavigate();
   const checkout = () => {
+    resetCart();
     navigate("/orderplaced");
   };
 
@@ -142,7 +147,7 @@ function CartPage() {
           <div className="cart-empty">
             <img
               className="empty-cart-image"
-              src="https://img.freepik.com/free-icon/shopping-cart_318-826604.jpg"
+              src="https://media1.giphy.com/media/fscIxPfKjPyShbwUS5/giphy.gif?cid=6c09b952n8hl1hu1xx42o7qsr295781y22bis2iy7s84mz7a&rid=giphy.gif&ct=s"
               alt="emptycart"
             ></img>
             <h1 className="cart-empty-text">Your Shopping Cart is empty !</h1>
