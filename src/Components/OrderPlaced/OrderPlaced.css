@@ -13,7 +13,7 @@
 
 .orderPlaced-container{
     height: 600px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,3 +58,4 @@
     background-color: #ff7824;
     transition: 50ms ease-in-out;
 }
+

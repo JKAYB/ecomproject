@@ -81,7 +81,7 @@ function CartPage() {
               console.log(data.product.quantity);
               return (
                 <div key={data.product.id} className="cart-item">
-                  <div className="cart-item-image">
+                  <div className="cart-item-image-container">
                     <img
                       className="cart-item-image"
                       src={data.product.images && data.product.images[0].url}
