@@ -54,7 +54,9 @@ function Navbar() {
             0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"/>
             </g>
         </svg>
-        <div className='cart-qty'>{qty}</div>
+        
+        <div className={qty===0?'cart-qty0' : 'cart-qty'}>{qty}</div>  
+            
         </button>
         <svg className='user-icon' version="1.0" xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 30 30"

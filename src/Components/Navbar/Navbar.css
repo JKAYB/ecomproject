@@ -156,7 +156,9 @@ color: #f9843b;
   width: 24px;
   height : 21px;
 }
-
+.cart-qty0{
+  display: none;
+}
 @keyframes pulse{
 
 0%{
@@ -272,7 +274,9 @@ color: #f9843b;
     font-weight: 100;
   }
   
-  
+  .cart-qty0{
+    display: none;
+  }
 
   
 .icons{
