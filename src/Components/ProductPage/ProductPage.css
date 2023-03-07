@@ -48,7 +48,6 @@
     right: 10vw;
     width: 45vw;
     height: 100%;
-    /* border: 1px solid black; */
 
 }
 .product-type{
@@ -232,5 +231,229 @@
     color: #1E293B;
     margin-left: 10vw;
     text-transform: capitalize;
+
+}
+
+@media only screen and (max-width:500px ){
+
+
+
+.BG-productPage{
+    background-color: #F5F5F5;
+    padding-top: 10px;
+
+}
+
+.product-content{
+    height: 1200px;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    border: 1px solid rgb(240, 4, 4);
+    display: block;
+
+}
+
+.product-desc-image{
+    width: 100%;
+    height: 50%;
+
+}
+.product-desc{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 0px;
+    border: 1px solid black;
+}
+.product-type{
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+.text-main{
+    font-weight: 600;
+    letter-spacing: 1.4px;
+}
+
+.text{
+    font-weight: 1000;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+.text-big{
+    font-weight: 600;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.imageBig{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;   
+}
+
+.imageBig-content{
+    margin-top: 10px;
+    width: 100%;
+    height: 55%;
+}
+
+.imageSmall{
+    border: 1px solid green;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    top:420px;
+    width: 100%;
+    min-height: 40%;
+}
+
+.imageSmall-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+.dropdown-buttons{
+   float:right;
+   height: 40px;
+}
+
+.dropdown{
+    margin-left: 15px;
+    border: none;
+    width: 70px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.dropdown-options{
+    padding-top: 10px;
+}
+
+.itemName{
+    margin-top:65px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    text-transform: capitalize;
+
+}
+.price{
+    margin-top: 5px;
+}
+
+.para{
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 0.3px;
+    margin-top:500px;
+    padding-top: 30px;
+    color: #64748B;
+    padding-bottom: 30px;
+    text-transform: capitalize;
+
+}
+.color-selection{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+
+}
+.color-choice{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+}
+
+
+.cartDiv{
+    position: absolute;
+    margin-top: 1%;
+    min-height: 50px;
+    top:73%;
+    padding-top: 0px;
+    width: 100%;
+}
+.wishlist-icon{
+    float: right;
+    margin-bottom: 10px;
+    padding-top:25px;
+    margin-right: 5%;
+    width: 18px;
+}
+
+.addToCartButton{
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+    background-color: #E89F71;
+    color: #ffffff   ;
+    border: none;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.addToCartButton:hover{
+  
+    background-color: #fc8338;
+    color: #ffffff   ;
+   
+}
+.notInStock{
+    border: 1px solid black;
+    height: 50px;
+    width: 70%;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 800;
+    padding-top: 20px;
+    margin-left: 20%;
+    font-family: sans-serif;
+    color: rgb(187, 15, 15);
+}
+.small-line{
+    display: none;
+    
+}
+
+.product-features{
+    width: 60vw;
+    margin-left: 10vw;
+    height: 200px;
+}
+
+.features-head{
+    margin-top: 20px;
+    color: #1E293B;
+}
+.features-desc{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #64748B;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.review-head{
+    font-family: sans-serif;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #1E293B;
+    margin-left: 10vw;
+    text-transform: capitalize;
+
+}
 
 }

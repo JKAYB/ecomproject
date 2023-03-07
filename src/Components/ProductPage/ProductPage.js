@@ -70,7 +70,7 @@ function ProductPage() {
 
   // eslint-disable-next-line eqeqeq
   if (isLoading || product.length == 0) {
-    debugger
+    
     return (<>
         <div className="loading">
         <img className="loadingImg" src={video} alt="loading.gif">
@@ -181,7 +181,7 @@ function ProductPage() {
         <p className="features-desc">{product.description}</p>
       </div>
 
-      <Tablist />
+      <Tablist/>
       <h1 className="review-head">Reviews</h1>
       <Reviews name={name1} date={date1} profilePic={proPic1} />
       <Reviews name={name2} date={date2} profilePic={proPic2} />
