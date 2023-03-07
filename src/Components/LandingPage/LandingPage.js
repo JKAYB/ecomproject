@@ -58,7 +58,7 @@ function LandingPage() {
           })}
          
         </div>
-        <Carousel infiniteLoop  stopOnHover className="main-carousel">
+        <Carousel infiniteLoop autoPlay stopOnHover className="main-carousel">
           {featureProducts.slice(0, 4).map((curElem) => {
             return (
               <div className="carousel-image" key={curElem.id}>
@@ -190,7 +190,7 @@ function LandingPage() {
           
         </div>
         <div className="BGcarousal">
-          <Carousel infiniteLoop stopOnHover>
+          <Carousel infiniteLoop autoPlay stopOnHover>
             <div className="carousel-BG">
               <img
                 src="https://hips.hearstapps.com/hmg-prod/images/home-decor-ideas-heidi-caillier-design-seattle-interior-designer-living-room-design-modern-traditional-1578073894.jpg?resize=480:*"
@@ -220,7 +220,7 @@ function LandingPage() {
       </div>
       <h1 className="products-head">Tips & Tricks</h1>
       <div className="tips">
-        <Carousel infiniteLoop autoPlay stopOnHover className="tips-carousel">
+        <Carousel  infiniteLoop autoPlay stopOnHover className="tips-carousel">
           <div className="carousel-tips">
             <img
               src="https://i.pinimg.com/564x/f6/7a/2c/f67a2c0cf3c82912d16ebeb647a58a29--wall-art-prints-canvas-prints.jpg"
