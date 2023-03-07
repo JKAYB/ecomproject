@@ -129,6 +129,7 @@ function ProductPage() {
             <h1 className="text-main">{product.name}</h1>
             <h2 className="price">₹{product.price}</h2>
             <br />
+            <div className="react-review">
             { product && product.stars &&
                 <ReactStars 
                 half={true}
@@ -138,11 +139,12 @@ function ProductPage() {
                 activeColor="#111827"
               />
             }
+            </div>
             
           </div>
           <p className="para">{product.description}</p>
 
-          <h4>Color</h4>
+          <h4 className="color-head">Color</h4>
           <div className="color-selection">
             { product.colors && product.colors.map((color,id) =>
                           <div style={{backgroundColor : color}} key={`color-${id}`} className="color-choice"></div>
