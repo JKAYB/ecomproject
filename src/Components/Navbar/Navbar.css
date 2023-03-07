@@ -4,7 +4,7 @@
 }
 
 .navbar{
-    width: 100%;
+    width: 100vw;
     box-sizing: border-box;
     height: 80px;
     color: black;
@@ -131,6 +131,17 @@ color: #f9843b;
 
 }
 
+.cart-icon{
+
+  width :28px;
+   height: 28px;
+}
+
+.user-icon{
+  width :34px;
+  height :34px;
+  
+}
 .heart{
   animation: pulse 2s infinite;
   width: 24px;
@@ -187,6 +198,92 @@ color: #f9843b;
 100%{
   transform: scale(0.9);
 
+}
+
+}
+
+
+@media only screen and (max-width:500px ){
+
+  .navbar{
+    width: 100vw;
+    box-sizing: border-box;
+    height: 80px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.navbar_contents{
+  display: none;
+
+}
+
+
+.search-box{
+    margin-left: 20px;
+    height: 33px;
+    width: 200px;
+    margin-top: 25px;
+    position: relative;
+    border-radius: 4px;
+  }
+  .input-search{
+    width: 110px;
+    border-style: none;
+    height: 33px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+    background-color: #ffffffbf;
+    padding-right: 40px;
+    color:rgb(0, 0, 0);
+    padding-left: 15px;
+  }
+  
+  
+  .input-search:focus{
+    width: 240px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-top: 2px solid black;
+    border-bottom:1px solid rgb(230, 118, 26);
+    border-right: 3.5px solid rgb(230, 118, 26) ;
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+
+  
+.icons{
+    position: absolute;
+    height: 40px;
+    right: 0px;
+    width: 100px;
+    margin-top: 18px;
+    margin-left: 0px;
+    margin-right: 0px;
+    cursor: pointer;
+
+}
+.cart-icon{
+  width: 25px;
+  height: 25px;
+}
+
+.user-icon{
+  width :28px;
+  height :28px;
+  
+}
+
+.heart{
+  animation: pulse 2s infinite;
+  width: 20px;
+  height : 21px;
 }
 
 }

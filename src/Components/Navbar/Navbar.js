@@ -37,8 +37,8 @@ function Navbar() {
           <path d="M11.9997 19.054C-7.99987 7.99991 6.00011 -4.00009 11.9997 3.58797C18.0001 -4.00009 32.0001 7.99991 11.9997 19.054Z" stroke="#262F56" strokeWidth="1.8"/>
         </svg>
         <button onClick={cart} style={{border: 'none' ,cursor:'pointer', background:'transparent',position:'relative',curser:'pointer'}}>
-        <svg  version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="28" height="28" viewBox="0 0 64 64"
+        <svg className='cart-icon' version="1.0" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 64 64"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
@@ -56,8 +56,8 @@ function Navbar() {
         </svg>
         <div style={{position:'absolute',height:'15px',width:'15px',top:'15px',right:'-5px',borderRadius:'50%',background:'orange'}}>{qty}</div>
         </button>
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="34" height="34" viewBox="0 0 30 30"
+        <svg className='user-icon' version="1.0" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 30 30"
             preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"

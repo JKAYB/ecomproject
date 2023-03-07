@@ -151,7 +151,7 @@ function CartPage() {
             </h2>
             <h3 className="cart-empty-text-link">
               Click{" "}
-              <a className="link-cart-empty" href="/home">
+              <a className="link-cart-empty" href="/">
                 {" "}
                 here
               </a>{" "}

@@ -58,7 +58,7 @@ function LandingPage() {
           })}
          
         </div>
-        <Carousel infiniteLoop autoPlay stopOnHover className="main-carousel">
+        <Carousel infiniteLoop  stopOnHover className="main-carousel">
           {featureProducts.slice(0, 4).map((curElem) => {
             return (
               <div className="carousel-image" key={curElem.id}>
@@ -186,9 +186,8 @@ function LandingPage() {
             Our designer already made a lot of beautiful prototipe of rooms that
             inspire you
           </h4>
-          <div className="showMore">
             <button className="exploreNowbutton">Explore Now</button>
-          </div>
+          
         </div>
         <div className="BGcarousal">
           <Carousel infiniteLoop stopOnHover>
