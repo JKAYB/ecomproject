@@ -406,24 +406,24 @@
 
 
 .cartDiv{
-    position: static;
-    margin-top: 1%;
+    position: relative;
+    margin-top: 2%;
     min-height: 50px;
-    padding-top: 0px;
+    padding-top: 10px;
     width: 100%;
 }
 .wishlist-icon{
-    float: right;
-    margin-bottom: 10px;
-    padding-top:1%;
-    margin-right: 5%;
-    width: 18px;
+    right: 0%;
+    width: 24px;
+    position: absolute;
 }
 
 .addToCartButton{
+    position: absolute;
     height: 50px;
-    width: 90%;
-    margin-left: 5%;
+    width: 50%;
+    margin-top: 10px;
+    left: 25%;
     background-color: #E89F71;
     color: #ffffff   ;
     border: none;
@@ -432,12 +432,7 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.addToCartButton:hover{
-  
-    background-color: #fc8338;
-    color: #ffffff   ;
-   
-}
+
 .notInStock{
     height: 50px;
     padding-top: 0px;
@@ -492,10 +487,11 @@
 
 }
 .success-message{
-    float: left;
-    width: 40px;
-    height: 30px;
-    margin-right: 20px;
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    margin-top: 6px;
+    left: 0px;
 }
 
 }

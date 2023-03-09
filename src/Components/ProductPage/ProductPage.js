@@ -50,25 +50,23 @@ function ProductPage() {
   const { isLoading ,incQty , addItemToCart} = useStateContext();
   const { id } = useParams();
 
-  const [sucess, setSucess] = useState(false);
+  const [sucess, setSucess] = useState(true);
   const [product, setProduct] = useState([]);
 
   function combined(product){
     incQty();
     addItemToCart(product);
     handleSuccess();
-
-
 }
+
+
 function handleSuccess() {
   setSucess(true);
-  console.log(sucess)
 
   setTimeout(() => {
     setSucess(false);
   }, 1600);
 }
-
 
   useEffect(() => {
     axios
@@ -169,7 +167,7 @@ function handleSuccess() {
 
                     )}
             {
-                product.stock>0?( 
+                product.stock>0 ?( 
                     
                     <button onClick={() => combined({product})} className="addToCartButton">
                         Add to cart
