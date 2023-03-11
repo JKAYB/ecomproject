@@ -50,7 +50,7 @@ function ProductPage() {
   const { isLoading ,incQty , addItemToCart} = useStateContext();
   const { id } = useParams();
 
-  const [sucess, setSucess] = useState(true);
+  const [sucess, setSucess] = useState(false);
   const [product, setProduct] = useState([]);
 
   function combined(product){
@@ -62,6 +62,7 @@ function ProductPage() {
 
 function handleSuccess() {
   setSucess(true);
+  console.log(sucess)
 
   setTimeout(() => {
     setSucess(false);
