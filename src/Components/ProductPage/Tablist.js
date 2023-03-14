@@ -7,9 +7,10 @@ import { useParams } from 'react-router-dom';
 const Tablist = () => {
   const [activeTab, setActiveTab] = useState(1);
 
-  const handleTabClick = (tabIndex) => {
-    setActiveTab(tabIndex);
-  };
+const handleTabClick = (tabIndex) => {
+  setActiveTab(tabIndex);
+};
+
 const{id} = useParams();
 
 const [product, setProduct] = useState([]);
@@ -22,6 +23,8 @@ useEffect(() => {
       setProduct(response.data);
     });
 }, [id]);
+
+
   return (
     <div className='tabs-main'>
     <div className="tabs-container">
