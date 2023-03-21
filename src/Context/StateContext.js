@@ -115,8 +115,7 @@ export const StateContext = ({ children }) => {
         decreaseCartItem,
         removeItem,
         resetCart,
-      }}
-    >
+      }}>
       {children}
     </Context.Provider>
   );

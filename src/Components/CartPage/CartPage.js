@@ -35,7 +35,6 @@ function CartPage() {
     }, 1000);
   }
 
-
   const navigate = useNavigate();
   const checkout = () => {
     resetCart();
