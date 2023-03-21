@@ -131,7 +131,7 @@ function CartPage() {
                         alt="remove item"
                       ></img>
                       {showWarning && (
-                        <p className="warning">Exceeded stock availability !</p>
+                        <p key= {id} className="warning">Exceeded stock availability !</p>
                       )}
                     </div>
                   </div>

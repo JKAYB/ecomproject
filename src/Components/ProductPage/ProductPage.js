@@ -75,6 +75,11 @@ function ProductPage() {
       });
   }, [id]);
 
+
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+  }, [id]);
+
   // eslint-disable-next-line eqeqeq
   if (isLoading || product.length == 0) {
     return (
