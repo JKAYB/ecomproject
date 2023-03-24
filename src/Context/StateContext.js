@@ -52,7 +52,7 @@ export const StateContext = ({ children }) => {
     let array = [...cartItems];
     array.find((item) => item.product.id === data.product.id).product.quantity >
     1
-      ?   (  decQty()    
+      ?   (  decQty    
         (array.find(
           (item) => item.product.id === data.product.id
         ).product.quantity = data.product.quantity - 1))
@@ -95,13 +95,12 @@ export const StateContext = ({ children }) => {
     setQty((prevQty) => prevQty + 1);
   };
 
-  function decQty() {
+  const decQty = () => {
     setQty((prevQty) => {
-      if (prevQty - 1 < 1)
-        return 1;
+      if (prevQty - 1 < 1) return 1;
       return prevQty - 1;
     });
-  }
+  };
 
   return (
     <Context.Provider
