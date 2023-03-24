@@ -32,11 +32,11 @@ export const StateContext = ({ children }) => {
     );
     if (availableItem) {
       product.product.quantity += 1;
-      console.log("Increased item quantity");
+      // console.log("Increased item quantity");
     } else {
       product.product.quantity = 1;
       setCartItems([...cartItems, product]);
-      console.log("Added new item");
+      // console.log("Added new item");
     }
   }
 

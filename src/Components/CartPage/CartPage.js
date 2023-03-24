@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import RecentlyViewed from "../ProductPage/RecentlyViewed";
-import remove from "../../Icon/remove.png";
+import remove from "../../Icon/remove-icon.png";
 import { useStateContext } from "../../Context/StateContext";
 import video from "../../Icon/loading.gif";
 

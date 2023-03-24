@@ -59,7 +59,7 @@ function ProductPage() {
 
   function handleSuccess() {
     setSucess(true);
-    console.log(sucess);
+    // console.log(sucess);
 
     setTimeout(() => {
       setSucess(false);
@@ -71,7 +71,7 @@ function ProductPage() {
       .get(`https://course-api.com/react-store-single-product?id=${id}`)
       .then((response) => {
         setProduct(response.data);
-        console.log(response.data)
+        // console.log(response.data)
       });
   }, [id]);
 
