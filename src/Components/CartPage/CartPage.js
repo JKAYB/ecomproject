@@ -48,7 +48,7 @@ function CartPage() {
   const decreaseQuantity = (data) => {
     decreaseCartItem(data);
   };
-
+// eslint-disable-next-line
   useEffect(() => {
     let price = 0;
     // eslint-disable-next-line array-callback-return
@@ -56,7 +56,7 @@ function CartPage() {
       price = price + item.product.quantity * item.product.price;
     });
     setPrice(price);
-  }, [cartItems]);
+  },[qty,cartItems]);
 
   // eslint-disable-next-line eqeqeq
   if (isLoading && cartItems.length == 0) {
@@ -79,7 +79,6 @@ function CartPage() {
             <h3 className="cart-item-head">Shopping Cart</h3>
 
             {cartItems.map((data, index) => {
-              console.log(data.product.quantity);
               return (
                 <div key={data.product.id} className="cart-item">
                   <div className="cart-item-image-container">
