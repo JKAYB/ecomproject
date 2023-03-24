@@ -152,7 +152,7 @@ color: #f9843b;
   
 }
 .heart{
-  animation: pulse 2s infinite;
+  animation: pulse 1.2s infinite;
   width: 24px;
   height : 21px;
 }
@@ -176,22 +176,22 @@ color: #f9843b;
 
 }
 40%{
-  transform: scale(0.85);
+  transform: scale(0.95);
   /* transform: translateY(2px); */
 
 }
 50%{
-  transform: scale(0.8);
+  transform: scale(0.9);
   /* transform: translateY(2px); */
 
 }
 60%{
-  transform: scale(0.85);
+  transform: scale(0.95);
   /* transform: translateY(2px); */
 
 }
 70%{
-  transform: scale(0.9);
+  transform: scale(1);
   /* transform: translateY(2.2px); */
 
 }
@@ -201,13 +201,13 @@ color: #f9843b;
 
 }
 90%{
-  transform: scale(0.99);
+  transform: scale(0.9);
   /* transform: translateY(2.2px); */
 
 }
 
 100%{
-  transform: scale(1);
+  transform: scale(0.95);
 
 }
 
@@ -313,7 +313,7 @@ color: #f9843b;
 }
 
 .heart{
-  animation: pulse 2s infinite;
+  animation: pulse 1.2s infinite;
   width: 20px;
   height : 21px;
 }
