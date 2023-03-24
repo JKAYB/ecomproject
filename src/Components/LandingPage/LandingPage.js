@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import { useStateContext } from "../../Context/StateContext";
 import Navbar from "../Navbar/Navbar";
 import "./LandingPage.css";
@@ -24,6 +24,10 @@ function LandingPage() {
     navigate(`/product/${id}`);
     //  console.log(id)
   };
+
+  useEffect(() => {
+    window.scrollTo({top: 1400, left: 0, behavior: 'smooth' });
+  }, [showContent]);
 
   if (isLoading) {
     return (

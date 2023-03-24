@@ -52,14 +52,14 @@ export const StateContext = ({ children }) => {
     let array = [...cartItems];
     array.find((item) => item.product.id === data.product.id).product.quantity >
     1
-      ? (array.find(
+      ?     decQty()    
+        (array.find(
           (item) => item.product.id === data.product.id
         ).product.quantity = data.product.quantity - 1)
       : (array.find(
           (item) => item.product.id === data.product.id
         ).product.quantity = 1);
     setCartItems(array);
-    decQty();
   }
 
   const removeItem = (index, data) => {

@@ -45,7 +45,7 @@ const proPic4 =
   "https://i.scdn.co/image/ab67616d0000b2736b915e407b70e121e06fe979";
 
 function ProductPage() {
-  const { isLoading, incQty, addItemToCart } = useStateContext();
+  const { isLoading, incQty, addItemToCart ,cartItems  } = useStateContext();
   const { id } = useParams();
 
   const [sucess, setSucess] = useState(false);
@@ -75,6 +75,7 @@ function ProductPage() {
       });
   }, [id]);
 
+  
 
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
@@ -178,13 +179,25 @@ function ProductPage() {
               ></img>
             )}
             {product.stock > 0 ? (
-              
-              <button
+              cartItems.length>0?(cartItems.find((item) => item.product.id === product.id)?(
+              <button 
+              className="addToCartButton"
+            >
+              Added to cart
+            </button>):( 
+            <button 
+            onClick={() => combined({ product })}
+            className="addToCartButton"
+          >
+            Add to cart
+          </button>
+            ) ):(
+              <button 
                 onClick={() => combined({ product })}
                 className="addToCartButton"
               >
                 Add to cart
-              </button>
+              </button>)
             ) : (
               <div className="notInStock">Temporarily out of stock</div>
             )}
