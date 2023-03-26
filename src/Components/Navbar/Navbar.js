@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Navbar.css"
-import { useNavigate ,useParams} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { useStateContext } from "../../Context/StateContext";
 import wishIcon from '../../Icon/wishNav.png'
 import wishIconRed from '../../Icon/wishNAV-red.png'
@@ -10,14 +10,17 @@ import wishIconRed from '../../Icon/wishNAV-red.png'
 function Navbar() {
 
   const navigate=useNavigate();
-  const {id} = useParams();
 
   const {qty , wish } =useStateContext();
   const home=()=>{
     navigate('/home')
   }
   const cart=()=>{
-    navigate(`/cart/${id}`)
+    navigate(`/cart`)
+  }
+
+  const wishList=()=>{
+    navigate(`/wishlist`)
   }
   return (
     <div className='navbar'>
@@ -37,11 +40,11 @@ function Navbar() {
         </span>
         <span className='icons'>
           { wish.length>0?(
-            <img className='heart' src={wishIconRed} alt="wish">
+            <img className='heart' src={wishIconRed} onClick={wishList} alt="wish">
             </img>
           ):
           
-          (  <img className='heart' src={wishIcon} alt="wish">
+          (  <img className='heart' src={wishIcon} onClick={wishList} alt="wish">
             </img>)
           }
        

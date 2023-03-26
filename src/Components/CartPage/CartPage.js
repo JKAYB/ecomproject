@@ -35,7 +35,7 @@ function CartPage() {
     }, 1000);
   }
 
-  const shopnow = (id) => {
+  const details = (id) => {
     navigate(`/product/${id}`);
   };
 
@@ -78,7 +78,7 @@ function CartPage() {
     <div className="page">
       <Navbar />
       <div className="cartPage-content">
-        {id && qty && cartItems.length > 0 ? (
+        {cartItems.length > 0 ? (
           <div className="cart-items-container">
             <h3 className="cart-item-head">Shopping Cart</h3>
 
@@ -89,7 +89,8 @@ function CartPage() {
                     <img
                       className="cart-item-image"
                       src={data.product.images && data.product.images[0].url}
-                      onClick={() => shopnow(data.product.id)}
+                      onClick={() => details(data.product.id)}
+
                       alt="item img"
                     ></img>
                   </div>
@@ -165,7 +166,7 @@ function CartPage() {
           </div>
         )}
 
-        {id && qty && cartItems.length > 0 ? (
+        {cartItems.length > 0 ? (
           <div className="order-summary">
             <h3 className="order-summary-head">Order Summary</h3>
             <div className="price-breakup">

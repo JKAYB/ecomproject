@@ -70,11 +70,13 @@ function ProductPage() {
   function handleWish(product){
     wishList(product);
     setShowImage(!showImage);
+    console.log(wish)
   }
 
   function handleRemoveFromWish(product){
     setShowImage(!showImage);
-    removeFromWishList(product);
+    removeFromWishList(product);   
+
   }
 
   useEffect(() => {

@@ -4,6 +4,7 @@ import CartPage from "./Components/CartPage/CartPage";
 import {Routes,Route} from 'react-router-dom'
 import OrderPlaced from "./Components/OrderPlaced/OrderPlaced";
 import {StateContext} from '../src/Context/StateContext'
+import WishList from "./Components/Wishlist/WishList";
 function App() {
   return (
     <div className="App">
@@ -12,8 +13,8 @@ function App() {
         <Route path= "/" exact element = {<LandingPage/>} />
           <Route path= "/home" exact element = {<LandingPage/>} />
           <Route path= "/product/:id" exact element = {<ProductPage/>} /> 
-          <Route path= "/cart/:id" exact element = {<CartPage/>} />   
           <Route path= "/cart" exact element = {<CartPage/>} />   
+          <Route path= "/wishlist" exact element = {<WishList/>} />   
           <Route path= "/orderplaced" exact element = {<OrderPlaced/>} />   
         </Routes>
         </StateContext>
