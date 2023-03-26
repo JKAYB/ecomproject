@@ -194,6 +194,18 @@
     color: #ffffff   ;
    
 }
+
+.addToCartButtonAdded{
+    height: 50px;
+    width: 340px;
+    background-color: #E89F71;
+    color: #ffffff   ;
+    border: none;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 .notInStock{
     height: 50px;
     width: 340px;
@@ -424,6 +436,18 @@
     width: 50%;
     margin-top: 10px;
     left: 25%;
+    background-color: #E89F71;
+    color: #ffffff   ;
+    border: none;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addToCartButtonAdded{
+    height: 50px;
+    width: 340px;
     background-color: #E89F71;
     color: #ffffff   ;
     border: none;

@@ -7,7 +7,8 @@ import Collapsible from "../Collapsible/Collapsible";
 import Line from "../Line/Line";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import wish from "../../Icon/wishlist.png";
+import wishIcon from "../../Icon/icon-heart.png";
+import wishIconRED from "../../Icon/icon-heart-red.png";
 import Reviews from "./Reviews";
 import RecentlyViewed from "./RecentlyViewed";
 import Tablist from "./Tablist";
@@ -45,11 +46,13 @@ const proPic4 =
   "https://i.scdn.co/image/ab67616d0000b2736b915e407b70e121e06fe979";
 
 function ProductPage() {
-  const { isLoading, incQty, addItemToCart ,cartItems  } = useStateContext();
+  const { isLoading, incQty, addItemToCart ,cartItems,wishList ,wish ,removeFromWishList} = useStateContext();
   const { id } = useParams();
 
   const [sucess, setSucess] = useState(false);
   const [product, setProduct] = useState([]);
+  const [showImage, setShowImage] = useState(true);
+
 
   function combined(product) {
     incQty();
@@ -59,11 +62,19 @@ function ProductPage() {
 
   function handleSuccess() {
     setSucess(true);
-    // console.log(sucess);
-
     setTimeout(() => {
       setSucess(false);
     }, 1600);
+  }
+
+  function handleWish(product){
+    wishList(product);
+    setShowImage(!showImage);
+  }
+
+  function handleRemoveFromWish(product){
+    setShowImage(!showImage);
+    removeFromWishList(product);
   }
 
   useEffect(() => {
@@ -74,8 +85,6 @@ function ProductPage() {
         // console.log(response.data)
       });
   }, [id]);
-
-  
 
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
@@ -169,8 +178,12 @@ function ProductPage() {
               ))}
           </div>
           <div className="cartDiv">
-            <img className="wishlist-icon" src={wish} alt="wishlist"></img>
-
+            {
+            wish.length>0 ?
+              (wish.find((item) => item.id === product.id)?(<img className="wishlist-icon" src={wishIconRED} alt="wishlist" onClick={() => handleRemoveFromWish(product)}></img>)
+              :(<img className="wishlist-icon" src={wishIcon} alt="wishlist" onClick={() => handleWish(product)}></img>))
+            :(<img className="wishlist-icon" src={wishIcon} alt="wishlist" onClick={() => handleWish(product)}></img>)
+            }
             {sucess && (
               <img
                 src={cartImg}
@@ -181,7 +194,7 @@ function ProductPage() {
             {product.stock > 0 ? (
               cartItems.length>0?(cartItems.find((item) => item.product.id === product.id)?(
               <button 
-              className="addToCartButton"
+              className="addToCartButtonAdded"
             >
               Added to cart
             </button>):( 

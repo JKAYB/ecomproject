@@ -26,6 +26,21 @@ export const StateContext = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
 
+  const [wish , setWish] = useState([])
+
+
+  function wishList(product){
+    setWish([...wish, product])
+  }
+
+
+  const removeFromWishList = (product) => {
+    const newWishItems = [...wish];
+    const index = wish.findIndex((item) => item.id === product.id)
+    newWishItems.splice(index, 1);
+    setWish(newWishItems);
+  };
+
   function addItemToCart(product) {
     var availableItem = cartItems.find(
       (item) => item.product.id === product.product.id
@@ -115,6 +130,9 @@ export const StateContext = ({ children }) => {
         decreaseCartItem,
         removeItem,
         resetCart,
+        wishList,
+        wish,
+        removeFromWishList
       }}>
       {children}
     </Context.Provider>

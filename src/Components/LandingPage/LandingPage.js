@@ -27,7 +27,7 @@ function LandingPage() {
 
   useEffect(() => {
     window.scrollTo({top: 1400, left: 0, behavior: 'smooth' });
-  }, [showContent]);
+  }, [setShowContent]);
 
   if (isLoading) {
     return (

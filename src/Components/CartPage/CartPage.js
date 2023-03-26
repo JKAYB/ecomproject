@@ -35,6 +35,10 @@ function CartPage() {
     }, 1000);
   }
 
+  const shopnow = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   const navigate = useNavigate();
   const checkout = () => {
     resetCart();
@@ -85,6 +89,7 @@ function CartPage() {
                     <img
                       className="cart-item-image"
                       src={data.product.images && data.product.images[0].url}
+                      onClick={() => shopnow(data.product.id)}
                       alt="item img"
                     ></img>
                   </div>

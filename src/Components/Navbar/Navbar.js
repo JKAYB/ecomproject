@@ -2,6 +2,9 @@ import React from 'react'
 import "./Navbar.css"
 import { useNavigate ,useParams} from 'react-router-dom';
 import { useStateContext } from "../../Context/StateContext";
+import wishIcon from '../../Icon/wishNav.png'
+import wishIconRed from '../../Icon/wishNAV-red.png'
+
 
 
 function Navbar() {
@@ -9,7 +12,7 @@ function Navbar() {
   const navigate=useNavigate();
   const {id} = useParams();
 
-  const {qty } =useStateContext();
+  const {qty , wish } =useStateContext();
   const home=()=>{
     navigate('/home')
   }
@@ -33,9 +36,15 @@ function Navbar() {
               <input type="text" className="input-search" placeholder="Search any products ..."/>
         </span>
         <span className='icons'>
-        <svg className='heart'  viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.9997 19.054C-7.99987 7.99991 6.00011 -4.00009 11.9997 3.58797C18.0001 -4.00009 32.0001 7.99991 11.9997 19.054Z" stroke="#262F56" strokeWidth="1.8"/>
-        </svg>
+          { wish.length>0?(
+            <img className='heart' src={wishIconRed} alt="wish">
+            </img>
+          ):
+          
+          (  <img className='heart' src={wishIcon} alt="wish">
+            </img>)
+          }
+       
         <button onClick={cart} style={{border: 'none' ,cursor:'pointer', background:'transparent',position:'relative',curser:'pointer'}}>
         <svg className='cart-icon' version="1.0" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 64 64"
