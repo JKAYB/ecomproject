@@ -302,6 +302,7 @@
         border-radius: 6px;
         overflow: hidden;
         position: absolute;
+
     }
     .cart-item-image{
         cursor: pointer;
@@ -313,18 +314,17 @@
     }
     .cart-item-details{
         position: absolute;
-        width: 100%;
+        width: 55%;
         height: 150px;
-        margin-left: 0%;
+        margin-left:  45%;
         text-transform: capitalize;
     
     }
     
     .cart-item-details-container{
         position: absolute;
-        margin-left: 45%;
         height: 150px;
-        width: 55%;
+        width: 100%;
     }
     
     .cart-item-details-name{
