@@ -6,7 +6,7 @@
 }
 
 .wishList-container{
-    min-height: 400px;
+    min-height: 350px;
     width: 100%;
 
     
@@ -124,4 +124,103 @@
     letter-spacing: 0.6px;
     font-family: sans-serif;
     padding-bottom: 20px;
+}
+
+@media only screen and (max-width:500px ){
+
+    .wishList-grid-container{
+        margin-left: 5%;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 2%;
+        column-gap: 10%;
+    }
+    .wish-item{ 
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        border: 1px solid rgba(171, 171, 171, 0.505);
+        border-radius: 7px;
+        height: 190px;
+        position: relative;
+        margin-bottom: 30px;
+        overflow: hidden;
+        background-color: rgba(198, 198, 198, 0.473);
+        
+    }
+
+    .wish-item-details-container{
+        height: 160px;
+        width: 100%;
+        padding-left: 10%;
+    }
+    .wish-item-details-name{
+        font-size: 20px;
+        width: 100%;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: #3A3A3A;
+    }
+    .wish-item-details-desc{
+        font-size: 16px;
+        font-weight: 300;
+        font-family: sans-serif;
+        letter-spacing: 0.5px;
+        margin-top: 5px;
+        color: #898989;
+    }
+    .wish-item-image{
+        cursor: pointer;
+        height: 220px;
+        width: 50%;
+        height: 100%;
+        border-radius: 6px;
+        overflow: hidden;
+        position: absolute;
+    }
+    .wish-item-details{
+        position: absolute;
+        width: 100%;
+        padding-top: 20px;
+        height: 190px;
+        position: relative;
+        text-transform: capitalize;
+    
+    }
+    .wish-item-details-desc{
+        font-size: 16px;
+        font-weight: 300;
+        font-family: sans-serif;
+        letter-spacing: 0.5px;
+        margin-top: 20px;
+        color: #898989;
+    }
+    .wish-item-details-stock{
+        font-size: 16px;
+        font-weight: 300;
+        font-family: sans-serif;
+        letter-spacing: 0.6px;
+        margin-top: 22px;
+        color: #898989;
+    }
+    .remove-item{
+        position: absolute;
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        right:3px;
+        top:2px;
+    }
+    .empty-wishList{
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .text-wish{
+        font-size: larger;
+        color: #1E293B;
+        letter-spacing: 0.2px;
+        font-family: sans-serif;
+        padding-bottom: 20px;
+    }
 }

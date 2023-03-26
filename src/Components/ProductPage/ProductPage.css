@@ -446,8 +446,11 @@
 }
 
 .addToCartButtonAdded{
+    position: absolute;
     height: 50px;
     width: 50%;
+    margin-top: 10px;
+    left: 25%;
     background-color: #E89F71;
     color: #ffffff   ;
     border: none;
