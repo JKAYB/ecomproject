@@ -39,11 +39,14 @@
 .wish-item{ 
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    border: 1px solid rgb(150, 150, 150);
-    border-radius: 6px;
+    border: 1px solid rgba(171, 171, 171, 0.505);
+    border-radius: 7px;
     height: 222px;
     position: relative;
     margin-bottom: 60px;
+    overflow: hidden;
+    background-color: rgba(198, 198, 198, 0.473);
+
     
 }
 .wish-item-image{
@@ -57,6 +60,7 @@
 .wish-item-details{
     position: absolute;
     width: 100%;
+    padding-top: 5px;
     height: 220px;
     position: relative;
     text-transform: capitalize;
@@ -99,6 +103,15 @@
     letter-spacing: 0.6px;
     margin-top: 100px;
     color: #898989;
+}
+
+.remove-item{
+    position: absolute;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    right:10px;
+    top:8px;
 }
 
 .empty-wishList{
