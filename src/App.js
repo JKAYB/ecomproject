@@ -5,6 +5,7 @@ import {Routes,Route} from 'react-router-dom'
 import OrderPlaced from "./Components/OrderPlaced/OrderPlaced";
 import {StateContext} from '../src/Context/StateContext'
 import WishList from "./Components/Wishlist/WishList";
+import Results from "./Components/Results/Results";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
           <Route path= "/cart" exact element = {<CartPage/>} />   
           <Route path= "/wishlist" exact element = {<WishList/>} />   
           <Route path= "/orderplaced" exact element = {<OrderPlaced/>} />   
+          <Route path= "/results" exact element = {<Results/>} />   
         </Routes>
         </StateContext>
   </div>

@@ -24,7 +24,6 @@ const ProductReducer = (state,action) =>{
                 products: action.payload,
                 featureProducts: featureData,         
             }
-           
         
         default:
             return state;

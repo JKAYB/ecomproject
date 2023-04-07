@@ -2,14 +2,18 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.wishList{
+    padding-top: 10px;
     background-color:  #F5F5F5;
+
 }
 
 .wishList-container{
     min-height: 350px;
     width: 100%;
-
-    
+ 
 }
 
 .wishlist-head{
@@ -114,8 +118,19 @@
 }
 
 .empty-wishList{
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
+    height: 350px;
+    padding-top: 50px;
+    width: 90%;
+    margin-left: 5%;
+    border: 3px double #df720c ;
+
+}
+
+.empty-wish-image{
+    height: 70px;
+    margin-bottom: 50px;
 }
 
 .text-wish{
@@ -208,15 +223,24 @@
         top:8px;
     }
     .empty-wishList{
-        margin-top: 30px;
+        margin-top: 10px;
         text-align: center;
+        height: 300px;
+        padding-top: 50px;
+        width: 96%;
+        margin-left: 2%;
+        border: 3px double #df720c ;
     }
     
     .text-wish{
-        font-size: larger;
+        font-size: large;
         color: #1E293B;
         letter-spacing: 0.2px;
         font-family: sans-serif;
         padding-bottom: 20px;
+    }
+    .empty-wish-image{
+        height: 80px;
+        margin-bottom: 40px;
     }
 }

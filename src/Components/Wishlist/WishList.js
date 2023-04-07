@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import { useStateContext } from "../../Context/StateContext";
 import video from "../../Icon/loading.gif";
 import remove from "../../Icon/remove-icon.png";
+import emptywish from "../../Icon/EmptyWishList.png"
 
 function WishList() {
   const navigate = useNavigate();
@@ -75,6 +76,7 @@ function WishList() {
           </div>
         ) : (
           <div className="empty-wishList">
+            <img className="empty-wish-image" src={emptywish} alt='Empty Wishlist Icon'></img>
             <h1 className="text-wish">Your wishlist is empty ... </h1>
             <h3 className="text-wish">Add items to your wishlist now...</h3>
           </div>

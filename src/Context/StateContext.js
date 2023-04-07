@@ -28,6 +28,11 @@ export const StateContext = ({ children }) => {
 
   const [wish , setWish] = useState([])
 
+  const [data , setData] = useState('')
+
+  const [search , setSearch] = useState([])
+
+ 
 
   function wishList(product){
     setWish([...wish, product])
@@ -132,7 +137,12 @@ export const StateContext = ({ children }) => {
         resetCart,
         wishList,
         wish,
-        removeFromWishList
+        removeFromWishList,
+        data,
+        setData,
+        search,
+        setSearch
+        
       }}>
       {children}
     </Context.Provider>

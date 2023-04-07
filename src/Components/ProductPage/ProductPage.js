@@ -46,7 +46,7 @@ const proPic4 =
   "https://i.scdn.co/image/ab67616d0000b2736b915e407b70e121e06fe979";
 
 function ProductPage() {
-  const { isLoading, incQty, addItemToCart ,cartItems,wishList ,wish ,removeFromWishList} = useStateContext();
+  const { isLoading, incQty, addItemToCart ,cartItems,wishList ,wish ,removeFromWishList } = useStateContext();
   const { id } = useParams();
 
   const [sucess, setSucess] = useState(false);
@@ -70,7 +70,8 @@ function ProductPage() {
   function handleWish(product){
     wishList(product);
     setShowImage(!showImage);
-    console.log(wish)
+    // console.log(wish)
+    console.log(product)
   }
 
   function handleRemoveFromWish(product){

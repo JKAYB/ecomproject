@@ -2,16 +2,29 @@ import React from 'react'
 import "./Navbar.css"
 import { useNavigate} from 'react-router-dom';
 import { useStateContext } from "../../Context/StateContext";
-import wishIcon from '../../Icon/wishNav.png'
-import wishIconRed from '../../Icon/wishNAV-red.png'
-
-
+import wishIcon from '../../Icon/icon-heart.png'
+import wishIconRed from '../../Icon/icon-heart-red.png'
+import video from "../../Icon/loading.gif";
 
 function Navbar() {
 
   const navigate=useNavigate();
 
-  const {qty , wish } =useStateContext();
+  const {isLoading , qty , wish , products ,data , setData ,search, setSearch} =useStateContext();
+
+  
+
+  const handleSearch = (e) =>{
+    e.preventDefault();
+    const item = e.target.value;
+    setData(item);
+    console.log(search)
+    const filteredData = products.filter(item => {
+      return item.name.toLowerCase().includes(data.toLowerCase());
+    })
+     setSearch(filteredData);
+  }
+
   const home=()=>{
     navigate('/home')
   }
@@ -22,6 +35,23 @@ function Navbar() {
   const wishList=()=>{
     navigate(`/wishlist`)
   }
+
+  function searchList(e) {
+    e.preventDefault();
+    navigate(`/results`);
+  }
+
+  if (isLoading) {
+    return (
+      <>
+        <div className="loading">
+          <img className="loadingImg" src={video} alt="loading.gif"></img>
+        </div>
+        <div className="loadingScreen"> Page is Loading ..... </div>
+      </>
+    );
+  }
+
   return (
     <div className='navbar'>
         <ul className='navbar_contents'>
@@ -36,7 +66,9 @@ function Navbar() {
             <li className="navbar-menu" >Contact Us </li>
         </ul>
         <span className="search-box">
-              <input type="text" className="input-search" placeholder="Search any products ..."/>
+          <form onSubmit={searchList}>
+              <input type="text" className="input-search" value={data} onChange={handleSearch}  placeholder= {data?(data):("Search any products ...")}/>
+          </form>
         </span>
         <span className='icons'>
           { wish.length>0?(

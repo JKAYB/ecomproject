@@ -1,0 +1,30 @@
+.result-head{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color:#3A3A3A;
+    line-height: 120%;
+    margin-left: 6%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+}
+
+
+
+@media only screen and (max-width:500px ){
+
+.result-head{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color:#3A3A3A;
+    line-height: 120%;
+    text-align: center;
+  
+}
+
+}
