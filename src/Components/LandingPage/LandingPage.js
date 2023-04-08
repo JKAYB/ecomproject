@@ -15,6 +15,7 @@ import Footer from "../Footer/Footer";
 import video from "../../Icon/loading.gif";
 
 function LandingPage() {
+  
   const { isLoading, featureProducts, products } = useStateContext();
 
   const [currentSlide, setCurrentSlide] = useState(0);

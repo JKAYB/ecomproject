@@ -5,8 +5,15 @@ import { useStateContext } from "../../Context/StateContext";
 import wishIcon from "../../Icon/icon-heart.png";
 import wishIconRed from "../../Icon/icon-heart-red.png";
 import video from "../../Icon/loading.gif";
+import mobilenav from "../../Icon/navicon.png";
+import { useState , useEffect} from "react";
+
 
 function Navbar() {
+
+  const [toggleMenu,setToggleMenu] = useState(false);
+  const [screenWidth,setScreenWidth] = useState(window.innerWidth);
+
   const navigate = useNavigate();
 
   const {
@@ -21,6 +28,22 @@ function Navbar() {
     category,
   } = useStateContext();
 
+  const toggleNav =()=>{
+    setToggleMenu(!toggleMenu)
+  }
+
+  useEffect(() => {
+    const changeWidth=()=>{
+      setScreenWidth(window.innerWidth)
+    }
+    window.addEventListener('resize',changeWidth)
+
+    return()=>{
+      window.removeEventListener('resize',changeWidth)
+    }
+  }, [])
+  
+
   const handleSearch = (e) => {
     e.preventDefault();
     const item = e.target.value;
@@ -31,6 +54,7 @@ function Navbar() {
     });
     setSearch(filteredData);
   };
+
 
   const home = () => {
     navigate("/home");
@@ -84,7 +108,10 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <ul className="navbar_contents">
+      <button onClick={toggleNav} className="dropdown-mobie-button">
+        <img className="dropdown-mobie-icon" src={mobilenav} alt='dropdown-img'></img>
+        </button>  
+      {(toggleMenu || screenWidth>500)&& <ul className="navbar_contents">
         <li className="brand-name" onClick={home}>
           Funiro.
         </li>
@@ -115,6 +142,9 @@ function Navbar() {
         </select>
         <li className="navbar-menu">Contact Us </li>
       </ul>
+  }
+
+
       <span className="search-box">
         <form onSubmit={searchList}>
           <input
@@ -142,7 +172,7 @@ function Navbar() {
             alt="wish"
           ></img>
         )}
-
+        {/* CartIcon */}
         <button
           onClick={cart}
           style={{
@@ -153,6 +183,7 @@ function Navbar() {
             curser: "pointer",
           }}
         >
+
           <svg
             className="cart-icon"
             version="1.0"
@@ -181,6 +212,7 @@ function Navbar() {
 
           <div className={qty === 0 ? "cart-qty0" : "cart-qty"}>{qty}</div>
         </button>
+        {/* userIcon */}
         <svg
           className="user-icon"
           version="1.0"
@@ -203,7 +235,9 @@ function Navbar() {
             />
           </g>
         </svg>
+
       </span>
+
     </div>
   );
 }

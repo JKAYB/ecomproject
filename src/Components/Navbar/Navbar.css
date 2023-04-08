@@ -36,6 +36,7 @@
     cursor: pointer;
 
 }
+
 .brand-name:hover{
   color: #f9843b;
 
@@ -161,7 +162,9 @@ color: #f9843b;
 .cart-qty0{
   display: none;
 }
-
+.dropdown-mobie-button{
+  display: none;
+}
 
 @media only screen and (max-width:500px ){
 
@@ -172,16 +175,11 @@ color: #f9843b;
     color: black;
     display: flex;
     flex-direction: row;
-    position: relative;
+    position: static;
 }
-
-.navbar_contents{
-  display: none;
-
-}
-
 
 .search-box{
+
     margin-left: 0px;
     height: 30px;
     width: 200px;
@@ -193,6 +191,7 @@ color: #f9843b;
     width: 180px;
     border-style: none;
     height: 30px;
+    margin-left: 20px;
     font-size: 11px;
     letter-spacing: 0.5px;
     outline: none;
@@ -206,7 +205,7 @@ color: #f9843b;
   
   
   .input-search:focus{
-    width: 220px;
+    width: 210px;
     border-radius: 3px;
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
@@ -265,5 +264,71 @@ color: #f9843b;
   width: 20px;
   height : 21px;
 }
+.dropdown-mobie-button{
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin-top: 25px;
+  margin-left: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.528);
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  align-items: center;
+}
+.dropdown-mobie-button:active{
+  transform: scale(1.1);
+
+}
+
+
+.navbar_contents{
+  display: block;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  height: 130px;
+  width: 100px;
+  margin-left: 10px;
+  padding: 0;
+  margin-top: 60px;
+  background-color:#ffa268;
+  
+}
+
+.brand-name{
+  font-family: 'Gilroy';
+  font-size: 20px;
+  padding-top: 10px;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1.5px;
+  font-weight: 100px;
+  cursor: pointer;
+
+}
+.navbar-menu-drop{
+  height: 25px;
+  margin-top: 5px;
+  background-color: transparent;
+  border: none;
+  width: 75px;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  font-family: 'Gilroy';
+  text-transform: capitalize;
+}
+
+.navbar-menu{
+  font-size: 13px;
+}
+
+.dropdown-mobie-icon{
+  height: 30px;
+  width: 30px;
+
+}
+
 
 }
