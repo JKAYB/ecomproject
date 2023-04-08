@@ -1,3 +1,9 @@
+
+.result-page{
+    padding-top: 10px;
+    background-color: #F5F5F5;
+
+}
 .result-head{
     font-style: normal;
     font-weight: 300;
@@ -7,7 +13,6 @@
     margin-left: 6%;
     padding-bottom: 30px;
     padding-top: 30px;
-
 }
 
 

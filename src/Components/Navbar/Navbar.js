@@ -1,46 +1,76 @@
-import React from 'react'
-import "./Navbar.css"
-import { useNavigate} from 'react-router-dom';
+import React from "react";
+import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../Context/StateContext";
-import wishIcon from '../../Icon/icon-heart.png'
-import wishIconRed from '../../Icon/icon-heart-red.png'
+import wishIcon from "../../Icon/icon-heart.png";
+import wishIconRed from "../../Icon/icon-heart-red.png";
 import video from "../../Icon/loading.gif";
 
 function Navbar() {
+  const navigate = useNavigate();
 
-  const navigate=useNavigate();
+  const {
+    isLoading,
+    qty,
+    wish,
+    products,
+    data,
+    setData,
+    search,
+    setSearch,
+    category,
+  } = useStateContext();
 
-  const {isLoading , qty , wish , products ,data , setData ,search, setSearch} =useStateContext();
-
-  
-
-  const handleSearch = (e) =>{
+  const handleSearch = (e) => {
     e.preventDefault();
     const item = e.target.value;
     setData(item);
-    console.log(search)
-    const filteredData = products.filter(item => {
+    console.log(search);
+    const filteredData = products.filter((item) => {
       return item.name.toLowerCase().includes(data.toLowerCase());
-    })
-     setSearch(filteredData);
-  }
+    });
+    setSearch(filteredData);
+  };
 
-  const home=()=>{
-    navigate('/home')
-  }
-  const cart=()=>{
-    navigate(`/cart`)
-  }
+  const home = () => {
+    navigate("/home");
+  };
+  const cart = () => {
+    navigate(`/cart`);
+  };
 
-  const wishList=()=>{
-    navigate(`/wishlist`)
-  }
+  const wishList = () => {
+    navigate(`/wishlist`);
+  };
 
   function searchList(e) {
     e.preventDefault();
     navigate(`/results`);
   }
 
+  const handleOptionProduct = (e) => {
+    const category = e.target.value;
+    const filteredData = products.filter((item) => {
+      return item.category.toLowerCase().includes(category.toLowerCase());
+    });
+    console.log(category)
+    console.log(filteredData)
+
+    setSearch(filteredData);
+    navigate(`/results`);
+  };
+ 
+
+  const handleOptionCategory = (e) => {
+    const category = e.target.value;
+    const filteredData = products.filter((item) => {
+      return item.category.toLowerCase().includes(category.toLowerCase());
+    });
+    console.log(category)
+    setSearch(filteredData);
+    navigate(`/results`);
+  };
+ 
   if (isLoading) {
     return (
       <>
@@ -53,41 +83,90 @@ function Navbar() {
   }
 
   return (
-    <div className='navbar'>
-        <ul className='navbar_contents'>
-            <li className="brand-name" onClick={home}>Funiro.</li>
-            <select className="navbar-menu-drop" > 
-              <option className='navbar-menu-drop-items'>Product</option>
-             
-            </select>
-            <select className="navbar-menu-drop" name='Rooms'>
-              <option >Room</option>
-              </select>
-            <li className="navbar-menu" >Contact Us </li>
-        </ul>
-        <span className="search-box">
-          <form onSubmit={searchList}>
-              <input type="text" className="input-search" value={data} onChange={handleSearch}  placeholder= {data?(data):("Search any products ...")}/>
-          </form>
-        </span>
-        <span className='icons'>
-          { wish.length>0?(
-            <img className='heart' src={wishIconRed} onClick={wishList} alt="wish">
-            </img>
-          ):
-          
-          (  <img className='heart' src={wishIcon} onClick={wishList} alt="wish">
-            </img>)
-          }
-       
-        <button onClick={cart} style={{border: 'none' ,cursor:'pointer', background:'transparent',position:'relative',curser:'pointer'}}>
-        <svg className='cart-icon' version="1.0" xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 64 64"
-            preserveAspectRatio="xMidYMid meet">
+    <div className="navbar">
+      <ul className="navbar_contents">
+        <li className="brand-name" onClick={home}>
+          Funiro.
+        </li>
+        <select className="navbar-menu-drop" value="Product" onChange={(e) => handleOptionProduct(e)} >
+          <option>Product</option>
+          {category.map((option) => (
+            <option
+             value= {option.category} 
+              className="navbar-menu-drop-items"
+              key={option.id} 
+            >
+              {option.category}
+            </option>
+          ))}
+        </select>
 
-            <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-            fill="#000000" stroke="none">
-            <path d="M85 490 c-10 -17 5 -30 34 -30 27 0 28 -3 51 -102 16 -65 32 -110 45
+        <select className="navbar-menu-drop"   onChange={(e) => handleOptionCategory(e)}>
+          <option>Category</option>
+          {category.map((option) => (
+            <option 
+              className="navbar-menu-drop-items"
+              key={option.id}
+              value = {option.category}
+            >
+              {option.category}
+            </option>
+          ))}
+        </select>
+        <li className="navbar-menu">Contact Us </li>
+      </ul>
+      <span className="search-box">
+        <form onSubmit={searchList}>
+          <input
+            type="text"
+            className="input-search"
+            value={data}
+            onChange={handleSearch}
+            placeholder={data ? data : "Search any products ..."}
+          />
+        </form>
+      </span>
+      <span className="icons">
+        {wish.length > 0 ? (
+          <img
+            className="heart"
+            src={wishIconRed}
+            onClick={wishList}
+            alt="wish"
+          ></img>
+        ) : (
+          <img
+            className="heart"
+            src={wishIcon}
+            onClick={wishList}
+            alt="wish"
+          ></img>
+        )}
+
+        <button
+          onClick={cart}
+          style={{
+            border: "none",
+            cursor: "pointer",
+            background: "transparent",
+            position: "relative",
+            curser: "pointer",
+          }}
+        >
+          <svg
+            className="cart-icon"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <g
+              transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+              fill="#000000"
+              stroke="none"
+            >
+              <path
+                d="M85 490 c-10 -17 5 -30 34 -30 27 0 28 -3 51 -102 16 -65 32 -110 45
             -123 19 -19 19 -21 3 -38 -10 -9 -18 -26 -18 -37 0 -26 34 -60 60 -60 26 0 60
             34 60 60 0 11 -9 29 -20 40 -20 20 -20 20 50 20 70 0 70 0 50 -20 -11 -11 -20
             -29 -20 -40 0 -26 34 -60 60 -60 26 0 60 34 60 60 0 11 -8 28 -18 38 -17 16
@@ -95,29 +174,38 @@ function Navbar() {
             -9 6 -18 6 -20 0 -2 61 -4 135 -4 74 0 135 -2 135 -5 0 -3 -7 -35 -16 -70
             l-16 -65 -117 0 -117 0 -23 98 c-29 122 -41 142 -86 142 -18 0 -37 -4 -40 -10z
             m191 -321 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m180
-            0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"/>
+            0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"
+              />
             </g>
-        </svg>
-        
-        <div className={qty===0?'cart-qty0' : 'cart-qty'}>{qty}</div>  
-            
+          </svg>
+
+          <div className={qty === 0 ? "cart-qty0" : "cart-qty"}>{qty}</div>
         </button>
-        <svg className='user-icon' version="1.0" xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 30 30"
-            preserveAspectRatio="xMidYMid meet">
-
-            <g transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"
-            fill="#000000" stroke="none">
-            <path d="M110 250 c-11 -11 -20 -31 -20 -45 0 -30 32 -65 60 -65 28 0 60 35
-            60 65 0 30 -32 65 -60 65 -11 0 -29 -9 -40 -20z"/>
-            <path d="M82 90 c-71 -32 -51 -45 68 -45 119 0 139 13 68 45 -54 25 -82 25
-            -136 0z"/>
-            </g>
+        <svg
+          className="user-icon"
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 30 30"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"
+            fill="#000000"
+            stroke="none"
+          >
+            <path
+              d="M110 250 c-11 -11 -20 -31 -20 -45 0 -30 32 -65 60 -65 28 0 60 35
+            60 65 0 30 -32 65 -60 65 -11 0 -29 -9 -40 -20z"
+            />
+            <path
+              d="M82 90 c-71 -32 -51 -45 68 -45 119 0 139 13 68 45 -54 25 -82 25
+            -136 0z"
+            />
+          </g>
         </svg>
-
-        </span>
+      </span>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

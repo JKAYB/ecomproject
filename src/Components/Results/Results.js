@@ -3,6 +3,8 @@ import "./Results.css";
 import { useStateContext } from "../../Context/StateContext";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import RecentlyViewed from "../ProductPage/RecentlyViewed";
+import Footer from "../Footer/Footer";
 
 function Results() {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ function Results() {
   };
 
   return (
-    <>
+    <div className="result-page">
       <Navbar />
       <h2 className="result-head">Search Results ...</h2>
       <div className="products-list">
@@ -42,7 +44,10 @@ function Results() {
           );
         })}
       </div>
-    </>
+      
+      <RecentlyViewed  head={"Recently Viewed"}/>
+      <Footer/>
+    </div>
   );
 }
 

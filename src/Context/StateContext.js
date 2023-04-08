@@ -18,6 +18,7 @@ export const StateContext = ({ children }) => {
     isError: false,
     products: [],
     featureProducts: [],
+    category : [],
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -32,7 +33,7 @@ export const StateContext = ({ children }) => {
 
   const [search , setSearch] = useState([])
 
- 
+  // const [category,setCategory] = useState([])
 
   function wishList(product){
     setWish([...wish, product])
@@ -141,7 +142,9 @@ export const StateContext = ({ children }) => {
         data,
         setData,
         search,
-        setSearch
+        setSearch,
+        // category,
+        // setCategory
         
       }}>
       {children}

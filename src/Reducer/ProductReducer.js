@@ -18,13 +18,20 @@ const ProductReducer = (state,action) =>{
                 return curElem.featured === true ;
             });
             
+            const categoryData = action.payload.filter((obj, index, arr) => {
+                return arr.findIndex(t => t.category === obj.category) === index;
+              });
+            
             return{
                 ...state,
                 isLoading: false,
                 products: action.payload,
-                featureProducts: featureData,         
+                featureProducts: featureData,  
+                category: categoryData,  
+       
             }
-        
+
+       
         default:
             return state;
             

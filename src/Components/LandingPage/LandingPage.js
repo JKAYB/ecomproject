@@ -17,7 +17,27 @@ import video from "../../Icon/loading.gif";
 function LandingPage() {
   const { isLoading, featureProducts, products } = useStateContext();
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const [showContent, setShowContent] = useState(false);
+
+
+  const slides = [
+    { id: 1, imageUrl: 'https://i.pinimg.com/564x/f6/7a/2c/f67a2c0cf3c82912d16ebeb647a58a29--wall-art-prints-canvas-prints.jpg', caption:'How to create a living room to love' },
+    { id: 2, imageUrl: 'https://i.pinimg.com/564x/29/3d/51/293d5191c14740b3dd4d306cd7b43c2b--living-room-kitchen-living-room-interior.jpg', caption:'Solution for cleaner look working space' },
+    { id: 3, imageUrl: 'https://img.staticmb.com/mbcontent/images/uploads/2021/1/a-classy-dark-theme-always-works.jpg', caption:'Make your cooking activity more fun with good setup' },
+  ];
+
+  const nextSlide = () => {
+    const next = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(next);
+  };
+
+  const prevSlide = () => {
+    const prev = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+    setCurrentSlide(prev);
+  };
+  
 
   const navigate = useNavigate();
   const shopnow = (id) => {
@@ -194,7 +214,7 @@ function LandingPage() {
           
         </div>
         <div className="BGcarousal">
-          <Carousel infiniteLoop autoPlay stopOnHover>
+          <Carousel infiniteLoop autoPlay stopOnHover className="carousal-two">
             <div className="carousel-BG">
               <img
                 src="https://hips.hearstapps.com/hmg-prod/images/home-decor-ideas-heidi-caillier-design-seattle-interior-designer-living-room-design-modern-traditional-1578073894.jpg?resize=480:*"
@@ -224,7 +244,7 @@ function LandingPage() {
       </div>
       <h1 className="products-head">Tips & Tricks</h1>
       <div className="tips">
-        <Carousel  infiniteLoop autoPlay stopOnHover className="tips-carousel">
+        {/* <Carousel  infiniteLoop autoPlay stopOnHover className="tips-carousel">
           <div className="carousel-tips">
             <img
               src="https://i.pinimg.com/564x/f6/7a/2c/f67a2c0cf3c82912d16ebeb647a58a29--wall-art-prints-canvas-prints.jpg"
@@ -243,7 +263,20 @@ function LandingPage() {
               alt="im"
             />
           </div>
-        </Carousel>
+        </Carousel> */}
+        <div className="carouselEnd">
+          <div className="carouselEnd__slide" style={{ backgroundImage: `url(${slides[currentSlide].imageUrl})` }}>
+          </div>
+          <div className="carouselEnd__caption_container">
+          <h1 className="carouselEnd__caption">{slides[currentSlide].caption}</h1>
+          </div>
+          <button className="carouselEnd__button_prev" onClick={prevSlide}>
+          {'<'}
+          </button>
+          <button className="carouselEnd__button_next" onClick={nextSlide}>
+            >
+          </button>
+        </div>
       </div>
       <ShareSetUp />
       <Footer />

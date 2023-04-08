@@ -338,6 +338,9 @@
 .exploreNowbutton:hover{
     background-color: #ff873c;
 }
+
+
+
 .BGcarousal{
     position: absolute;
     left : 550px;
@@ -346,15 +349,21 @@
     width: 800px;
     height: 550px;
     cursor: pointer;
-
 }
 
 
 .carousel-BG{
-    width: 400px;
+    width: 450px;
     margin-left: 70px;
     height: fit-content;
     object-fit: cover;
+}
+.carousal-two{
+    margin-top: 50px;
+    height: 550px;
+    width: 600px;
+    margin-left: 25%;
+    object-fit: contain;
 }
 
 .tips{
@@ -362,20 +371,96 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    position: relative;
+    margin-bottom: 100px;
+    
 }
-.tips-carousel{
+/* .tips-carousel{
     width:1000px;
     cursor: pointer;
+    height: 330px;
+    overflow: hidden;
 
+} */
 
-}
-
-.carousel-tips{
+/* .carousel-tips{
     margin-top: 30px;
     width: 360px;
-}
+} */
+.carouselEnd {
+    position: relative;
+    height: 400px;
+    width: 60%;
+    box-shadow: 0px 20px 70px rgba(128, 128, 128, 0.483);
 
+   
+  }
+  
+  .carouselEnd__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  
+  .carouselEnd__button_prev{
+    position: absolute;
+    left: -20px;
+    font-size: x-large;
+    color:#f48e4e;
+    top: 42%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.848);
+
+  }  
+  .carouselEnd__button_next{
+    color:#f48e4e;
+    font-size: x-large;
+    position: absolute;
+    top: 42%;
+    right: -20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.848);
+
+  }  
+
+  .carouselEnd__button_prev:hover{
+    background-color:#f9843b;
+    color: black;
+  }
+  .carouselEnd__button_next:hover{
+    background-color:#f9843b;
+    color: black;
+  }
+.carouselEnd__caption{
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    font-weight: 200;
+    font-family: sans-serif;
+}
+.carouselEnd__caption_container{
+    margin-top: 400px;
+    height: 40px;
+    background-color: #ffffff;
+    display: flex;   
+    align-items: center; 
+    justify-content: center;
+    border-radius: 0px 0px 4px 4px ;
+    box-shadow: 0px 20px 30px rgba(128, 128, 128, 0.401);
+}
 
 
 @media only screen and (max-width:500px ){
