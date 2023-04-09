@@ -16,17 +16,16 @@ import video from "../../Icon/loading.gif";
 
 function LandingPage() {
   
-  const { isLoading, featureProducts, products } = useStateContext();
+  const { isLoading, featureProducts, products ,setShowContent ,showContent } = useStateContext();
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const [showContent, setShowContent] = useState(false);
 
 
   const slides = [
-    { id: 1, imageUrl: 'https://i.pinimg.com/564x/f6/7a/2c/f67a2c0cf3c82912d16ebeb647a58a29--wall-art-prints-canvas-prints.jpg', caption:'How to create a living room to love' },
-    { id: 2, imageUrl: 'https://i.pinimg.com/564x/29/3d/51/293d5191c14740b3dd4d306cd7b43c2b--living-room-kitchen-living-room-interior.jpg', caption:'Solution for cleaner look working space' },
-    { id: 3, imageUrl: 'https://img.staticmb.com/mbcontent/images/uploads/2021/1/a-classy-dark-theme-always-works.jpg', caption:'Make your cooking activity more fun with good setup' },
+    { id: 1, imageUrl: 'https://homebnc.com/homeimg/2016/03/02-earthly-pleasures-small-living-room-design-homebnc.jpg', caption:'How to create a living room to love' },
+    { id: 2, imageUrl: 'https://images.hindustantimes.com/img/2022/06/04/1600x900/vadim-sherbakov-RcdV8rnXSeE-unsplash_1654324027519_1654324063951.jpg', caption:'Solution for cleaner look working space' },
+    { id: 3, imageUrl: 'https://www.stevewilliamskitchens.co.uk/wp-content/uploads/2016/08/Featured.jpg', caption:'Make your cooking activity more fun with good setup' },
   ];
 
   const nextSlide = () => {
@@ -47,7 +46,10 @@ function LandingPage() {
   };
 
   useEffect(() => {
-    window.scrollTo({top: 1400, left: 0, behavior: 'smooth' });
+    if(!showContent)
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
+    else  
+     window.scrollTo({top: 1400, left: 0, behavior: 'smooth' });
   }, [showContent]);
 
   if (isLoading) {

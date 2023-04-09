@@ -58,6 +58,7 @@ function Navbar() {
 
   const home = () => {
     navigate("/home");
+
   };
   const cart = () => {
     navigate(`/cart`);
@@ -77,9 +78,7 @@ function Navbar() {
     const filteredData = products.filter((item) => {
       return item.category.toLowerCase().includes(category.toLowerCase());
     });
-    console.log(category)
-    console.log(filteredData)
-
+    toggleNav()
     setSearch(filteredData);
     navigate(`/results`);
   };
@@ -90,10 +89,12 @@ function Navbar() {
     const filteredData = products.filter((item) => {
       return item.category.toLowerCase().includes(category.toLowerCase());
     });
-    console.log(category)
+    toggleNav()
     setSearch(filteredData);
     navigate(`/results`);
   };
+  
+
  
   if (isLoading) {
     return (

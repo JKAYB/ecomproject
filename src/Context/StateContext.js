@@ -33,6 +33,9 @@ export const StateContext = ({ children }) => {
 
   const [search , setSearch] = useState([])
 
+  const [showContent, setShowContent] = useState(false);
+
+
   // const [category,setCategory] = useState([])
 
   function wishList(product){
@@ -143,9 +146,8 @@ export const StateContext = ({ children }) => {
         setData,
         search,
         setSearch,
-        // category,
-        // setCategory
-        
+        showContent,
+        setShowContent  
       }}>
       {children}
     </Context.Provider>
