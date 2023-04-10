@@ -15,7 +15,7 @@
 .navbar_contents{
     height: 30px;
     width: 50%;
-    margin-left: 10px;
+    margin-left: 5%;
     display: flex;
     padding-top: 20px;
     flex-direction: row;
@@ -127,7 +127,7 @@ color: #f9843b;
     width: 180px;
     margin-top: 18px;
     margin-left: 100px;
-    margin-right: 100px;
+    margin-right: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -166,6 +166,20 @@ color: #f9843b;
   display: none;
 }
 
+
+@media only screen and (max-width:1200px ){
+  .navbar_contents{
+    height: 30px;
+    width: 50%;
+    margin-left: 7%;
+    display: flex;
+    padding-top: 20px;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+
+}
+}
 @media only screen and (max-width:500px ){
 
   .navbar{

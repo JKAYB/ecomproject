@@ -8,8 +8,17 @@ function Footer() {
   const navigate = useNavigate();
 
   const home=()=>{
-    navigate('/')
+    navigate('/home')
   }
+  const cart=()=>{
+    navigate('/cart')
+  }
+  // const home=()=>{
+  //   navigate('/')
+  // }
+  // const home=()=>{
+  //   navigate('/')
+  // }
 
   return (
     <div className='mainDiv'>
@@ -20,7 +29,7 @@ function Footer() {
           <h3 className="grid-item" href="xx">Worldwide furniture store since 2020. We sell over 1000+ branded products on our website</h3>
           <h3 className="grid-item"href="xx">Sawojajar Malang, Indonesia</h3>
           <h3 className="grid-item"href="xx">+6289 456 3455</h3>
-          <h3 className="grid-item"href="xx">www.funiro.com</h3>
+          <h3 className="grid-item" onClick={() => home()}>www.funiro.com</h3>
         </div>    
       </div>
       <div className='divRight'>
@@ -31,15 +40,15 @@ function Footer() {
                       <h2 className='grid-item-head1'>Stay Updated</h2>
                       <a className="grid-item" href="xx">Product</a>
                       <a className="grid-item"href="xx">My Account</a>
-                      <a className="grid-item"href="xx">Facebook</a>
+                      <a className="grid-item" href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
                       <a className="grid-item"href="xx">LOGIN</a>
                       <a className="grid-item"href="xx">Rooms</a>
                       <a className="grid-item"href="xx">Checkout</a>
-                      <a className="grid-item"href="xx">Instagram</a>
+                      <a className="grid-item"href="https://www.instagram.com" target="_blank"rel="noreferrer">Instagram</a>
                       <a className="grid-item"href="xx"><br></br></a>
                       <a className="grid-item"href="xx">Inspirations</a>
-                      <a className="grid-item"href="xx">My Cart</a>
-                      <a className="grid-item"href="xx">Twitter</a>
+                      <ul className="grid-item" onClick={() => cart()}>My Cart</ul>
+                      <a className="grid-item"href="https://www.twitter.com" target="_blank" rel="noreferrer">Twitter</a>
                       <a className="grid-item"href="xx"><br></br></a>
                       <a className="grid-item"href="xx">About Us</a>
                       <a className="grid-item"href="xx">My Catalog</a>

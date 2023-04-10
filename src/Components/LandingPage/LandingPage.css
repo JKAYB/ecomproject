@@ -463,6 +463,55 @@
 }
 
 
+@media only screen and (max-width:1200px ){
+
+.products-list{
+    min-height: 500px !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    gap: 1fr;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+
+
+.BG{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 600px;
+    background-color: #FCF8F3;
+    margin-bottom: 30px;
+
+}
+
+.BGcarousal{
+    position: absolute;
+    left : 50%;
+    object-fit: contain;
+    overflow: hidden;
+    width: 50%;
+    height: 550px;
+    cursor: pointer;
+}
+.carousel-BG{
+    overflow: hidden;
+    width: 70%;
+    margin-left: 0px;
+    height: fit-content;
+    object-fit: cover;
+}
+.carousal-two{
+    margin-top: 50px;
+    height: 550px;
+    width: 100%;
+    margin-left: 15%;
+    object-fit: contain;
+}
+}
+
+
 @media only screen and (max-width:500px ){
 
     *{
@@ -600,8 +649,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
 }
 
 
@@ -735,7 +782,7 @@
   }
   .carouselEnd__caption{
     font-size: 15px;
-    color: rgb(0, 0, 0);
+    color:#3A3A3A;
     font-weight: 600;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
