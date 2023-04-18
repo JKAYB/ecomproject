@@ -36,6 +36,11 @@ const date2 = "23 December 2020";
 const date3 = "14 June 2020";
 const date4 = "11 February 2023";
 
+const rating1 = "5";
+const rating2 = "3";
+const rating3 = "4";
+const rating4 = "5";
+
 const proPic1 =
   "http://www.wallpaperg.com/uploads/file/1482048132-awesome-hd-profile-picture-for-girls-file.jpg";
 const proPic2 =
@@ -46,18 +51,39 @@ const proPic4 =
   "https://i.scdn.co/image/ab67616d0000b2736b915e407b70e121e06fe979";
 
 function ProductPage() {
-  const { isLoading, incQty, addItemToCart ,cartItems,wishList ,wish ,removeFromWishList } = useStateContext();
+  const {
+    isLoading,
+    incQty,
+    addItemToCart,
+    wishList,
+    wish,
+    removeFromWishList,
+    cartItems,
+  } = useStateContext();
+
   const { id } = useParams();
 
   const [sucess, setSucess] = useState(false);
   const [product, setProduct] = useState([]);
   const [showImage, setShowImage] = useState(true);
 
-
   function combined(product) {
     incQty();
     addItemToCart(product);
     handleSuccess();
+    console.log(cartItems);
+  }
+
+  function isDisabled() {
+    if (cartItems?.length > 0) {
+      const itemFromCart = cartItems.find(
+        (item) => item.product.id === product.id
+      );
+      if (itemFromCart) {
+        return itemFromCart.product.quantity === product.stock;
+      }
+    }
+    return false;
   }
 
   function handleSuccess() {
@@ -67,30 +93,34 @@ function ProductPage() {
     }, 1600);
   }
 
-  function handleWish(product){
+  function handleWish(product) {
     wishList(product);
     setShowImage(!showImage);
     // console.log(wish)
-    console.log(product)
+    console.log(product);
   }
 
-  function handleRemoveFromWish(product){
+  function handleRemoveFromWish(product) {
     setShowImage(!showImage);
-    removeFromWishList(product);   
-
+    removeFromWishList(product);
   }
 
   useEffect(() => {
     axios
       .get(`https://course-api.com/react-store-single-product?id=${id}`)
       .then((response) => {
+        // console.log(cartItems);
+        // let availableItem = cartItems.find(
+        //   (item) => item.product.id === response.data.id
+        // );
+        // response.data.quantity = availableItem ? availableItem.quantity : 0
+        // console.log('availableItem', availableItem);
         setProduct(response.data);
-        // console.log(response.data)
       });
   }, [id]);
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [id]);
 
   // eslint-disable-next-line eqeqeq
@@ -181,12 +211,30 @@ function ProductPage() {
               ))}
           </div>
           <div className="cartDiv">
-            {
-            wish.length>0 ?
-              (wish.find((item) => item.id === product.id)?(<img className="wishlist-icon" src={wishIconRED} alt="wishlist" onClick={() => handleRemoveFromWish(product)}></img>)
-              :(<img className="wishlist-icon" src={wishIcon} alt="wishlist" onClick={() => handleWish(product)}></img>))
-            :(<img className="wishlist-icon" src={wishIcon} alt="wishlist" onClick={() => handleWish(product)}></img>)
-            }
+            {wish.length > 0 ? (
+              wish.find((item) => item.id === product.id) ? (
+                <img
+                  className="wishlist-icon"
+                  src={wishIconRED}
+                  alt="wishlist"
+                  onClick={() => handleRemoveFromWish(product)}
+                ></img>
+              ) : (
+                <img
+                  className="wishlist-icon"
+                  src={wishIcon}
+                  alt="wishlist"
+                  onClick={() => handleWish(product)}
+                ></img>
+              )
+            ) : (
+              <img
+                className="wishlist-icon"
+                src={wishIcon}
+                alt="wishlist"
+                onClick={() => handleWish(product)}
+              ></img>
+            )}
             {sucess && (
               <img
                 src={cartImg}
@@ -195,25 +243,13 @@ function ProductPage() {
               ></img>
             )}
             {product.stock > 0 ? (
-              cartItems.length>0?(cartItems.find((item) => item.product.id === product.id)?(
-              <button 
-              className="addToCartButtonAdded"
-            >
-              Added to cart
-            </button>):( 
-            <button 
-            onClick={() => combined({ product })}
-            className="addToCartButton"
-          >
-            Add to cart
-          </button>
-            ) ):(
-              <button 
+              <button
+                disabled={isDisabled()}
                 onClick={() => combined({ product })}
                 className="addToCartButton"
               >
-                Add to cart
-              </button>)
+                {isDisabled() ? "Exceeded Stock Availability" : "Add to cart"}
+              </button>
             ) : (
               <div className="notInStock">Temporarily out of stock</div>
             )}
@@ -236,10 +272,30 @@ function ProductPage() {
 
       <Tablist />
       <h1 className="review-head">Reviews</h1>
-      <Reviews name={name1} date={date1} profilePic={proPic1} />
-      <Reviews name={name2} date={date2} profilePic={proPic2} />
-      <Reviews name={name3} date={date3} profilePic={proPic3} />
-      <Reviews name={name4} date={date4} profilePic={proPic4} />
+      <Reviews
+        name={name1}
+        date={date1}
+        profilePic={proPic1}
+        rating={rating1}
+      />
+      <Reviews
+        name={name2}
+        date={date2}
+        profilePic={proPic2}
+        rating={rating2}
+      />
+      <Reviews
+        name={name3}
+        date={date3}
+        profilePic={proPic3}
+        rating={rating3}
+      />
+      <Reviews
+        name={name4}
+        date={date4}
+        profilePic={proPic4}
+        rating={rating4}
+      />
       <RecentlyViewed head={"Recently Viewed"} />
       <Footer />
     </div>

@@ -30,6 +30,8 @@
     width: 90vw;
     margin-bottom: 1rem;
     border-bottom: 1px solid #D8D8D8 ;
+    font-family: "Gilroy-Regular", sans-serif;
+
   }
   
   .tab {
@@ -68,6 +70,13 @@
   .tab-content-head{
     color:#1E293B;
     padding-bottom: 10px;
+    font-family: "Gilroy-Regular", sans-serif;
+
+  }
+
+  .tab-content-body{
+    font-family: "Gilroy-Regular", sans-serif;
+    font-weight: 100;
   }
 
   @media only screen and (max-width:500px ){
@@ -139,6 +148,10 @@
         .tab-content-head{
           color:#1E293B;
           padding-bottom: 10px;
+        }
+        .tab-content-body{
+          font-family: "Gilroy-Regular", sans-serif;
+          font-weight: 100;
         }
 
   }

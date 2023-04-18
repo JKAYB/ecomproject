@@ -12,6 +12,8 @@
 .recents-head{
     margin-top: 30px;
     color: #1E293B;
+    font-family: "Gilroy-Regular", sans-serif;
+
 }
 .recent-products{
     text-transform: capitalize;
@@ -63,6 +65,8 @@
     padding-top: 5px;
     color: #1E293B;
     font-size: 18px;
+    font-family: "Gilroy-Regular", sans-serif;
+
     
 }
 

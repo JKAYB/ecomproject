@@ -39,17 +39,18 @@
 }
 
 .Rectangle51{
-    background-color: hsl(33, 60%, 94%);
+    background-color: #FFE2CF    ;
     height: 784px ;
-    width: 100%;
+    width: 70%;
     margin-top :-101px;
     position: absolute;
     z-index: -1;
 
 }
 .Rectangle11{
+    
     height: 520px;
-    width: 430px;
+    width: 450px;
     margin-top: 20px;
     margin-left: 80px;
     position: absolute;
@@ -111,20 +112,22 @@
 .Head1-Rectangle11{
     padding-top: 40px;
     font-size: 56px;
-    font-weight: 100;
-    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    padding-left : 30px;
+    font-weight: 300;
+    font-family: 'Gilroy-Regular', sans-serif;
+    padding-left : 58px;
+    letter-spacing: 0.5px;
     color: #3A3A3A;
 }
 .Head2-Rectangle11{
-    padding-top: 30px;
-    padding-left : 10px;
+    padding-top: 35px;
+    padding-left : 22px;
     font-size: 20px;
-    width: 400px;
+    width: 370px;
     color: #3A3A3A;
     line-height: 30px;
     font-weight: 100;
-    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    letter-spacing: 0.5px;
+    font-family: 'Gilroy-Regular', sans-serif;
 }
 
 .ShopNow{
@@ -201,6 +204,8 @@
     line-height: 120%;
     text-align: center;
     padding-bottom: 30px;
+    font-family: 'Gilroy-Regular', sans-serif;
+
 }
 
 .products-list{
@@ -236,11 +241,13 @@
 .product-details-desc{
     text-align: center;
     padding-top: 20px;
+    font-family: 'Gilroy-Regular', sans-serif;
+
 }
 .product-details-desc-name{
     font-size: 18px;
     font-weight: 600;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
     text-transform: capitalize;
 
 }
@@ -249,7 +256,7 @@
     padding-top: 5px;
     font-size: 16px;
     text-transform: capitalize;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
 }
 
 .newPrice{
@@ -281,7 +288,7 @@
     font-weight: 800;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
 
 }
 .showMorebutton:hover{
@@ -307,12 +314,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'Gilroy-Regular', sans-serif;
+
 }
 .BGtext1{
     margin-left: 10px;
     font-size: 40px;
     font-weight: 300;
     line-height: 48px;
+    font-family: 'Gilroy-Regular', sans-serif;
+
 }
 .BGtext2{
     margin-left: 10px;
@@ -320,6 +331,8 @@
     font-size: 16px;
     font-weight: 300;
     line-height: 24px;
+    font-family: 'Gilroy-Regular', sans-serif;
+
 }
 .exploreNowbutton{
     margin-top: 60px;
@@ -331,7 +344,7 @@
     font-weight: 800;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
 
 
 }
@@ -373,6 +386,8 @@
     align-items: center;
     position: relative;
     margin-bottom: 100px;
+    font-family: 'Gilroy-Regular', sans-serif;
+
     
 }
 /* .tips-carousel{
@@ -449,7 +464,7 @@
     font-size: 22px;
     color:#3A3A3A;
     font-weight: 600;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
 }
 .carouselEnd__caption_container{
     margin-top: 400px;
@@ -593,7 +608,7 @@
     font-size: 42px;
     margin-left: -10px;
     font-weight: 100;
-    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-family: 'Gilroy-Regular', sans-serif;
     padding-left : 30px;
     color: #3A3A3A;
 }
@@ -605,7 +620,7 @@
     color: #3A3A3A;
     line-height: 30px;
     font-weight: 100;
-    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Gilroy-Regular', sans-serif;
 }
 
 .ShopNow{
@@ -676,7 +691,7 @@
 .product-details-desc-name{
     font-size: 18px;
     font-weight: 600;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
     text-transform: capitalize;
 
 }
@@ -685,7 +700,7 @@
     padding-top: 5px;
     font-size: 16px;
     text-transform: capitalize;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
 }
 .showMore{
     margin-top: 30px;
@@ -743,7 +758,7 @@
     font-weight: 800;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
 
 
 }
@@ -784,7 +799,7 @@
     font-size: 15px;
     color:#3A3A3A;
     font-weight: 600;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
     text-align: center;
 }
 }

@@ -143,6 +143,8 @@
     color: #64748B;
     padding-bottom: 30px;
     text-transform: capitalize;
+    font-family: "Gilroy-Regular", sans-serif;
+
 
 }
 .color-selection{
@@ -157,6 +159,9 @@
     width: 15px;
     border-radius: 50%;
     border: 0.5px solid black;
+}
+.color-choice:hover{
+    transform: scale(1.25);
 }
 
 .success-message{
@@ -175,6 +180,9 @@
     padding-top:25px;
     margin-right: 20px;
     width: 18px;
+}
+.wishlist-icon:hover{
+    transform: scale(1.08);
 }
 
 .addToCartButton{
@@ -239,11 +247,12 @@
     color: #64748B;
     letter-spacing: 1px;
     text-transform: capitalize;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    font-family: "Gilroy-Regular", sans-serif;
 }
 
 .review-head{
-    font-family: sans-serif;
+    font-family: "Gilroy-Regular", sans-serif;
     margin-top: 50px;
     margin-bottom: 50px;
     color: #1E293B;
@@ -469,7 +478,7 @@
     font-size: 18px;
     font-weight: 800;
     margin-left: 5%;
-    font-family: sans-serif;
+    font-family: "Gilroy-Regular", sans-serif;
     color: rgb(187, 15, 15);
 }
 .small-line{
@@ -501,7 +510,7 @@
     margin-left: 10%;
     letter-spacing: 1px;
     text-transform: capitalize;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Gilroy-Regular", sans-serif;
 }
 
 .review-head{

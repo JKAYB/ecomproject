@@ -47,9 +47,9 @@ function LandingPage() {
 
   useEffect(() => {
     if(!showContent)
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
+    window.scrollTo({top: 900, left: 0, behavior: 'smooth' })
     else  
-     window.scrollTo({top: 1400, left: 0, behavior: 'smooth' });
+     window.scrollTo({ left: 0, behavior: 'smooth' });
   }, [showContent]);
 
   if (isLoading) {
@@ -197,7 +197,7 @@ function LandingPage() {
         </div>
       )}
       <div className="showMore">
-        <button
+        <button 
           onClick={() => setShowContent(!showContent)}
           className="showMorebutton"
         >

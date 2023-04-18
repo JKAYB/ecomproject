@@ -15,6 +15,7 @@ function CartPage() {
   const {
     isLoading,
     qty,
+    incQty,
     removeItem,
     cartItems,
     increaseCartItem,
@@ -47,10 +48,12 @@ function CartPage() {
 
   const increaseQty = (data) => {
     increaseCartItem(data);
+    incQty()
   };
 
   const decreaseQuantity = (data) => {
     decreaseCartItem(data);
+    console.log(cartItems)
   };
 // eslint-disable-next-line
   useEffect(() => {

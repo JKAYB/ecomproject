@@ -15,12 +15,17 @@ function Reviews(props) {
                 </div>
             </div>
             <div className='user-ratings'>
-                    <ReactStars count={5}
+                    <ReactStars edit={false}
+                        half={true}
+                        count={5}
+                        value = {props.rating}
                             //  onChange={ratingChanged}
-                             size={20} activeColor="#ffd700"/>
+                             size={20} 
+                             activeColor="#fc8338"
+                             />
             </div>
             <div className='user-rating-comments'>
-                    <p>If everything I did failed - which it doesn't, it actually succeeds - just the
+                    <p className='rating-text'>If everything I did failed - which it doesn't, it actually succeeds - just the
                          fact that I'm willing to fail is an inspiration.
                          People are so scared to lose that they don't even try. Like, one thing people can't say is that 
                          I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.

@@ -54,14 +54,14 @@ useEffect(() => {
         {activeTab === 1 && (
           <div>
             <h2 className='tab-content-head'>Tab 1 Content</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            <p className='tab-content-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                labore et dolore magna aliqua.</p>
           </div>
         )}
         {activeTab === 2 && (
           <div>
             <h2 className='tab-content-head'>Product Characterestics</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            <p className='tab-content-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
@@ -69,7 +69,7 @@ useEffect(() => {
         {activeTab === 3 && (
           <div>
             <h2 className='tab-content-head'>Tab 3 Content</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            <p className='tab-content-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -78,7 +78,7 @@ useEffect(() => {
         {activeTab === 4 && (
           <div>
             <h2 className='tab-content-head'>Tab 4 Content</h2>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p className='tab-content-body'>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
         )}
       </div>

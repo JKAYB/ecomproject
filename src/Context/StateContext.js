@@ -18,7 +18,7 @@ export const StateContext = ({ children }) => {
     isError: false,
     products: [],
     featureProducts: [],
-    category : [],
+    category: [],
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -27,25 +27,22 @@ export const StateContext = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
 
-  const [wish , setWish] = useState([])
+  const [wish, setWish] = useState([]);
 
-  const [data , setData] = useState('')
+  const [data, setData] = useState("");
 
-  const [search , setSearch] = useState([])
+  const [search, setSearch] = useState([]);
 
   const [showContent, setShowContent] = useState(false);
 
 
-  // const [category,setCategory] = useState([])
-
-  function wishList(product){
-    setWish([...wish, product])
+  function wishList(product) {
+    setWish([...wish, product]);
   }
-
 
   const removeFromWishList = (product) => {
     const newWishItems = [...wish];
-    const index = wish.findIndex((item) => item.id === product.id)
+    const index = wish.findIndex((item) => item.id === product.id);
     newWishItems.splice(index, 1);
     setWish(newWishItems);
   };
@@ -54,13 +51,12 @@ export const StateContext = ({ children }) => {
     var availableItem = cartItems.find(
       (item) => item.product.id === product.product.id
     );
+    
     if (availableItem) {
-      product.product.quantity += 1;
-      // console.log("Increased item quantity");
+      availableItem.product.quantity += 1;
     } else {
       product.product.quantity = 1;
       setCartItems([...cartItems, product]);
-      // console.log("Added new item");
     }
   }
 
@@ -69,17 +65,17 @@ export const StateContext = ({ children }) => {
     array.find((item) => item.product.id === data.product.id).product.quantity =
       data.product.quantity + 1;
     setCartItems(array);
-    incQty();
   }
 
   function decreaseCartItem(data) {
     let array = [...cartItems];
     array.find((item) => item.product.id === data.product.id).product.quantity >
     1
-      ?   (  decQty    
-        (array.find(
-          (item) => item.product.id === data.product.id
-        ).product.quantity = data.product.quantity - 1))
+      ? decQty(
+          (array.find(
+            (item) => item.product.id === data.product.id
+          ).product.quantity = data.product.quantity - 1)
+        )
       : (array.find(
           (item) => item.product.id === data.product.id
         ).product.quantity = 1);
@@ -100,11 +96,14 @@ export const StateContext = ({ children }) => {
 
   const getProducts = async (url) => {
     dispatch({ type: "SET_LOADING" });
-
     try {
       const response = await axios.get(url);
-      const products = await response.data;
-      dispatch({ type: "SET_API_DATA", payload: products });
+      if (response.error) {
+        throw new Error(response.error);
+      } else {
+        const products = await response.data;
+        dispatch({ type: "SET_API_DATA", payload: products });
+      }
     } catch (error) {
       dispatch({ type: "API_ERROR" });
       alert(error);
@@ -147,8 +146,9 @@ export const StateContext = ({ children }) => {
         search,
         setSearch,
         showContent,
-        setShowContent  
-      }}>
+        setShowContent,
+      }}
+    >
       {children}
     </Context.Provider>
   );
