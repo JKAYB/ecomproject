@@ -282,7 +282,7 @@
 .showMorebutton{
     height: 70px;
     width: 370px;
-    background-color: #F5F5F5;
+    background-color: transparent;
     border : 2px solid #ec955f;
     color: #f48e4e   ;
     font-weight: 800;
@@ -709,7 +709,8 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-    
+    font-family: "Gilroy-Regular", sans-serif;
+
 }
 
 

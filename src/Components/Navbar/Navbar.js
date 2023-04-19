@@ -120,7 +120,7 @@ function Navbar() {
           Funiro.
         </li>
         <div className="navbar-menu-drop" value="Product"  >
-          Product 
+          Products
           <div className="dropdown-container">
  
           {category.map((option) => (
@@ -136,7 +136,7 @@ function Navbar() {
         </div>
 
         <div className="navbar-menu-drop"   >
-            Category  
+            Rooms  
             <div className="dropdown-container">
               {category.map((option) => (
                 <div onClick={(e) => handleOptionCategory(option.category)}
