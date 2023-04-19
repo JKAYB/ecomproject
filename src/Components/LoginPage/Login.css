@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+.pageLogin{
+    padding-top: 15px;
+    background-color: #F5F5F5;
+
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 30px;
+    background-color: #F5F5F5;
+    font-family: 'Gilroy-Regular', sans-serif;
+
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    height: 80%;
+    width: 60%;
+  }
+
+  .google-icon{
+    height: 40px;
+    width: 40px;
+    left: 26%;
+    top: 13px;
+    position: absolute;
+  }
+
+  .or{
+    text-align: center;
+    font-size: 22px;
+    color: #64748B;
+    font-weight: 100;
+    margin-top: 30px;
+  }
+
+  .googleSignIn{
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    color: rgb(93, 93, 93);
+    font-size: 26px;
+    border-radius: 1px;
+    border: 2px solid #808DA0    ;
+  }
+
+  .googleSignIn:hover{
+    background-color: transparent;
+    color: #1e1e1e;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    
+  }
+  .checkDiv{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  .remember-me {
+    font-weight: 100;
+    color: #64748B;
+  }
+
+
+  .checkbox{
+    height: 20px;
+    width: 20px;
+    border: 1px solid #64748B;
+    border-radius: 0px;
+    margin-right: 15px;
+    background-color: transparent;
+  }
+
+  .forgot-pass{
+    position: absolute;
+    right: 0px;
+    font-weight: 100;
+    color: #64748B;
+    text-decoration: underline;
+    text-decoration-color: #64748B ;
+  }
+  .forgot-pass:hover{
+    font-weight: 400;
+    text-decoration-color: #000000;
+  }
+  .input-login {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 1px;
+    border: 2px solid #E89F71;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  .input-login::placeholder{
+    font-size: 18px;
+  }
+  
+  .sign-in-button{
+    margin-top: 30px;
+    background-color: #E89F71 ;
+    border: none;
+    border-radius: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 30%;
+    font-size: 16px;
+    margin-left: 35%;
+    color: white;
+    font-family: 'Gilroy-Regular', sans-serif;
+  }
+  .sign-in-button:hover{
+    background-color: #e48143;
+  }
+  
+  

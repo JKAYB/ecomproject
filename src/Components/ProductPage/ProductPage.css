@@ -128,6 +128,8 @@
     flex-direction: column;
     height: 100px;
     text-transform: capitalize;
+    font-family: "Gilroy-Regular", sans-serif;
+
 
     /* border: 1px solid black; */
 }
@@ -203,17 +205,7 @@
    
 }
 
-.addToCartButtonAdded{
-    height: 50px;
-    width: 340px;
-    background-color: #E89F71;
-    color: #ffffff   ;
-    border: none;
-    font-weight: 800;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+
 .notInStock{
     height: 50px;
     width: 340px;
@@ -267,6 +259,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Gilroy-Regular", sans-serif;
+
 }
 
 .BG-productPage{
@@ -308,6 +302,8 @@
 .text-main{
     font-weight: 600;
     letter-spacing: 1.4px;
+    font-family: "Gilroy-Regular", sans-serif;
+
 }
 
 .text{
@@ -386,6 +382,9 @@
     flex-direction: column;
     height: 120px;
     text-transform: capitalize;
+    padding-top: 20px;
+    font-family: "Gilroy-Regular", sans-serif;
+
 
 }
 .price{
@@ -443,13 +442,15 @@
     position: absolute;
     height: 50px;
     width: 50%;
+    padding-right: 2%;
+    padding-left: 2%;
     margin-top: 10px;
     left: 25%;
     background-color: #E89F71;
     color: #ffffff   ;
     border: none;
-    font-weight: 800;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
     border-radius: 4px;
     cursor: pointer;
 }

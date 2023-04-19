@@ -6,6 +6,7 @@ import OrderPlaced from "./Components/OrderPlaced/OrderPlaced";
 import {StateContext} from '../src/Context/StateContext'
 import WishList from "./Components/Wishlist/WishList";
 import Results from "./Components/Results/Results";
+import Login from "./Components/LoginPage/Login";
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
           <Route path= "/wishlist" exact element = {<WishList/>} />   
           <Route path= "/orderplaced" exact element = {<OrderPlaced/>} />   
           <Route path= "/results" exact element = {<Results/>} />   
+          <Route path= "/login" exact element = {<Login/>} />   
         </Routes>
         </StateContext>
   </div>

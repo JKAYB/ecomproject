@@ -63,6 +63,9 @@ function Navbar() {
   const cart = () => {
     navigate(`/cart`);
   };
+  const user = () => {
+    navigate(`/login`);
+  };
 
   const wishList = () => {
     navigate(`/wishlist`);
@@ -214,7 +217,8 @@ function Navbar() {
           <div className={qty === 0 ? "cart-qty0" : "cart-qty"}>{qty}</div>
         </button>
         {/* userIcon */}
-        <svg
+
+        <svg onClick={user}
           className="user-icon"
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
