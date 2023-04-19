@@ -42,7 +42,7 @@ function WishList() {
                   <div className="wish-item-image-container">
                     <img
                       className="wish-item-image"
-                      src={product.images && product.images[0].url}
+                      src={product.images?(product.images && product.images[0].url):(product.image)}
                       onClick={() => details(product.id)}
                       alt="item img"
                     ></img>

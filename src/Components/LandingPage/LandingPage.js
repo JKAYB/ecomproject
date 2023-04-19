@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useStateContext } from "../../Context/StateContext";
 import Navbar from "../Navbar/Navbar";
 import "./LandingPage.css";
@@ -13,19 +13,46 @@ import { Carousel } from "react-responsive-carousel";
 import ShareSetUp from "./ShareSetUp";
 import Footer from "../Footer/Footer";
 import video from "../../Icon/loading.gif";
+import wishIcon from "../../Icon/like.png";
+import wishIconRED from "../../Icon/icon-heart-red.png";
+import shareIcon from "../../Icon/share.png";
 
 function LandingPage() {
-  
-  const { isLoading, featureProducts, products ,setShowContent ,showContent } = useStateContext();
+  const {
+    isLoading,
+    featureProducts,
+    products,
+    setShowContent,
+    showContent,
+    incQty,
+    addItemToCart,
+    wish,
+    wishList,
+    removeFromWishList,
+  } = useStateContext();
 
   const [currentSlide, setCurrentSlide] = useState(0);
-
-
+  const [showImage, setShowImage] = useState(true);
 
   const slides = [
-    { id: 1, imageUrl: 'https://homebnc.com/homeimg/2016/03/02-earthly-pleasures-small-living-room-design-homebnc.jpg', caption:'How to create a living room to love' },
-    { id: 2, imageUrl: 'https://images.hindustantimes.com/img/2022/06/04/1600x900/vadim-sherbakov-RcdV8rnXSeE-unsplash_1654324027519_1654324063951.jpg', caption:'Solution for cleaner look working space' },
-    { id: 3, imageUrl: 'https://www.stevewilliamskitchens.co.uk/wp-content/uploads/2016/08/Featured.jpg', caption:'Make your cooking activity more fun with good setup' },
+    {
+      id: 1,
+      imageUrl:
+        "https://homebnc.com/homeimg/2016/03/02-earthly-pleasures-small-living-room-design-homebnc.jpg",
+      caption: "How to create a living room to love",
+    },
+    {
+      id: 2,
+      imageUrl:
+        "https://images.hindustantimes.com/img/2022/06/04/1600x900/vadim-sherbakov-RcdV8rnXSeE-unsplash_1654324027519_1654324063951.jpg",
+      caption: "Solution for cleaner look working space",
+    },
+    {
+      id: 3,
+      imageUrl:
+        "https://www.stevewilliamskitchens.co.uk/wp-content/uploads/2016/08/Featured.jpg",
+      caption: "Make your cooking activity more fun with good setup",
+    },
   ];
 
   const nextSlide = () => {
@@ -37,7 +64,6 @@ function LandingPage() {
     const prev = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
     setCurrentSlide(prev);
   };
-  
 
   const navigate = useNavigate();
   const shopnow = (id) => {
@@ -45,11 +71,27 @@ function LandingPage() {
     //  console.log(id)
   };
 
+  function combined(product) {
+    incQty();
+    console.log(product);
+    addItemToCart(product);
+  }
+
+  function handleWish(product) {
+    wishList(product);
+    setShowImage(!showImage);
+    console.log(product);
+  }
+
+  function handleRemoveFromWish(product) {
+    setShowImage(!showImage);
+    removeFromWishList(product);
+  }
+
   useEffect(() => {
-    if(!showContent)
-    window.scrollTo({top: 900, left: 0, behavior: 'smooth' })
-    else  
-     window.scrollTo({ left: 0, behavior: 'smooth' });
+    if (!showContent)
+      window.scrollTo({ top: 900, left: 0, behavior: "smooth" });
+    else window.scrollTo({ left: 0, behavior: "smooth" });
   }, [showContent]);
 
   if (isLoading) {
@@ -76,20 +118,23 @@ function LandingPage() {
             Our furniture is made from selected and best quality materials that
             are suitable for your dream home{" "}
           </h3>
-          {featureProducts.slice(0, 1).map((curElem) => {
+          {featureProducts.slice(0, 1).map((product) => {
             return (
-              <button key={curElem.id} onClick={() => shopnow(curElem.id)} className="ShopNow">
+              <button
+                key={product.id}
+                onClick={() => shopnow(product.id)}
+                className="ShopNow"
+              >
                 Shop Now
               </button>
             );
           })}
-         
         </div>
         <Carousel infiniteLoop autoPlay stopOnHover className="main-carousel">
-          {featureProducts.slice(0, 4).map((curElem) => {
+          {featureProducts.slice(0, 4).map((product) => {
             return (
-              <div className="carousel-image" key={curElem.id}>
-                <img src={curElem.image} alt="im" />
+              <div className="carousel-image" key={product.id}>
+                <img src={product.image} alt="im" />
               </div>
             );
           })}
@@ -135,28 +180,70 @@ function LandingPage() {
 
       {showContent ? (
         <div className="products-list">
-          {products.slice(0, 20).map((curElem) => {
+          {products.slice(0, 20).map((product) => {
             return (
-              <span
-                className="product-list-content"
-                key={curElem.id}
-                onClick={() => shopnow(curElem.id)}
-              >
-                <div>
+              <span className="product-list-content" key={product.id}>
+                <div className="landing-product-container">
                   <img
+                    onClick={() => shopnow(product.id)}
                     className="product-image"
-                    src={curElem.image}
+                    src={product.image}
                     alt="s"
                   ></img>
                   <div className="product-details-desc">
-                    <p className="product-details-desc-name">{curElem.name}</p>
+                    <div className="product-details-desc-addtocart">
+                      <button
+                        onClick={() => combined({ product })}
+                        className="product-details-desc-addtocart-button"
+                      >
+                        Add to cart
+                      </button>
+                      <div className="share-like-container">
+                        <span className="share-like">
+                          <img
+                            className="wishlist-like"
+                            src={shareIcon}
+                            alt="share"
+                          ></img>
+                          Share
+                        </span>
+                        <span className="share-like">
+                          {wish.length > 0 ? (
+                            wish.find((item) => item.id === product.id) ? (
+                              <img
+                                className="wishlist-like"
+                                src={wishIconRED}
+                                alt="wishlist"
+                                onClick={() => handleRemoveFromWish(product)}
+                              ></img>
+                            ) : (
+                              <img
+                                className="wishlist-icon"
+                                src={wishIcon}
+                                alt="wishlist"
+                                onClick={() => handleWish(product)}
+                              ></img>
+                            )
+                          ) : (
+                            <img
+                              className="wishlist-icon"
+                              src={wishIcon}
+                              alt="wishlist"
+                              onClick={() => handleWish(product)}
+                            ></img>
+                          )}
+                          Like
+                        </span>
+                      </div>
+                    </div>
+                    <p className="product-details-desc-name">{product.name}</p>
                     <p className="product-details-desc-description">
-                      {curElem.company}
+                      {product.company}
                     </p>
                     <br />
-                    <span className="newPrice">₹{curElem.price}</span>{" "}
+                    <span className="newPrice">₹{product.price}</span>{" "}
                     <span className="strike">
-                      ₹{curElem.price + curElem.price / 5}
+                      ₹{product.price + product.price / 5}
                     </span>
                   </div>
                 </div>
@@ -166,28 +253,70 @@ function LandingPage() {
         </div>
       ) : (
         <div className="products-list">
-          {products.slice(0, 8).map((curElem) => {
+          {products.slice(0, 8).map((product) => {
             return (
-              <span
-                className="product-list-content"
-                key={curElem.id}
-                onClick={() => shopnow(curElem.id)}
-              >
-                <div>
+              <span className="product-list-content" key={product.id}>
+                <div className="landing-product-container">
                   <img
+                    onClick={() => shopnow(product.id)}
                     className="product-image"
-                    src={curElem.image}
+                    src={product.image}
                     alt="s"
                   ></img>
                   <div className="product-details-desc">
-                    <p className="product-details-desc-name">{curElem.name}</p>
+                    <div className="product-details-desc-addtocart">
+                      <button
+                        onClick={() => combined({ product })}
+                        className="product-details-desc-addtocart-button"
+                      >
+                        Add to cart
+                      </button>
+                      <div className="share-like-container">
+                        <span className="share-like">
+                          <img
+                            className="wishlist-like"
+                            src={shareIcon}
+                            alt="share"
+                          ></img>
+                          Share
+                        </span>
+                        <span className="share-like">
+                        {wish.length > 0 ? (
+                            wish.find((item) => item.id === product.id) ? (
+                              <img
+                                className="wishlist-like"
+                                src={wishIconRED}
+                                alt="wishlist"
+                                onClick={() => handleRemoveFromWish(product)}
+                              ></img>
+                            ) : (
+                              <img
+                                className="wishlist-like"
+                                src={wishIcon}
+                                alt="wishlist"
+                                onClick={() => handleWish(product)}
+                              ></img>
+                            )
+                          ) : (
+                            <img
+                              className="wishlist-like"
+                              src={wishIcon}
+                              alt="wishlist"
+                              onClick={() => handleWish(product)}
+                            ></img>
+                          )}
+                          Like
+                        </span>
+                      </div>
+                    </div>
+                    <p className="product-details-desc-name">{product.name}</p>
                     <p className="product-details-desc-description">
-                      {curElem.company}
+                      {product.company}
                     </p>
                     <br />
-                    <span className="newPrice">₹{curElem.price}</span>{" "}
+                    <span className="newPrice">₹{product.price}</span>{" "}
                     <span className="strike">
-                      ₹{curElem.price + curElem.price / 5}
+                      ₹{product.price + product.price / 5}
                     </span>
                   </div>
                 </div>
@@ -197,7 +326,7 @@ function LandingPage() {
         </div>
       )}
       <div className="showMore">
-        <button 
+        <button
           onClick={() => setShowContent(!showContent)}
           className="showMorebutton"
         >
@@ -213,8 +342,7 @@ function LandingPage() {
             Our designer already made a lot of beautiful prototipe of rooms that
             inspire you
           </h4>
-            <button className="exploreNowbutton">Explore Now</button>
-          
+          <button className="exploreNowbutton">Explore Now</button>
         </div>
         <div className="BGcarousal">
           <Carousel infiniteLoop autoPlay stopOnHover className="carousal-two">
@@ -268,13 +396,17 @@ function LandingPage() {
           </div>
         </Carousel> */}
         <div className="carouselEnd">
-          <div className="carouselEnd__slide" style={{ backgroundImage: `url(${slides[currentSlide].imageUrl})` }}>
-          </div>
+          <div
+            className="carouselEnd__slide"
+            style={{ backgroundImage: `url(${slides[currentSlide].imageUrl})` }}
+          ></div>
           <div className="carouselEnd__caption_container">
-          <h1 className="carouselEnd__caption">{slides[currentSlide].caption}</h1>
+            <h1 className="carouselEnd__caption">
+              {slides[currentSlide].caption}
+            </h1>
           </div>
           <button className="carouselEnd__button_prev" onClick={prevSlide}>
-          {'<'}
+            {"<"}
           </button>
           <button className="carouselEnd__button_next" onClick={nextSlide}>
             >

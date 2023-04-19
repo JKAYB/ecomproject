@@ -230,22 +230,88 @@
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
+    transition: 100ms ease-in;
+}
+.product-list-content:hover{
+    transform: scale(1.02);
 }
 
 .product-image{
     width: 285px;
     height: 301px;
-
-
 }
+
+
+
 .product-details-desc{
     text-align: center;
     padding-top: 20px;
     font-family: 'Gilroy-Regular', sans-serif;
 
 }
+.product-details-desc-addtocart{
+    position: absolute;
+    display: none;
+    top: 0px;
+    background-color: #000000ab;
+    width: 285px;
+    height: 446px;
+    border: 1px solid black;
+}
+
+.product-details-desc:hover .product-details-desc-addtocart{
+    display: block;
+}
+
+.product-details-desc-addtocart-button{
+    margin-top: 160px;
+    width: 180px;
+    height: 45px;
+    color: #ec955f;
+    background-color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: 'Gilroy-Regular', sans-serif;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+}
+
+
+.product-details-desc-addtocart-button:hover{
+    background-color: #f48e4e;
+    color: black;
+}
+
+.share-like-container{
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-weight: 100;
+}
+
+.share-like{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 80px;
+    height: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
+    color: white;
+}
+
+.wishlist-like{
+    height: 20px;
+    width: 20px;
+}
+
 .product-details-desc-name{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     font-family: 'Gilroy-Regular', sans-serif;
     text-transform: capitalize;
@@ -253,9 +319,10 @@
 }
 
 .product-details-desc-description{
-    padding-top: 5px;
+    padding-top: 15px;
     font-size: 16px;
     text-transform: capitalize;
+    color: #898989;
     font-family: 'Gilroy-Regular', sans-serif;
 }
 
@@ -678,7 +745,10 @@
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
+    border: 1px solid black;
 }
+
+
 
 .product-image{
     width: 285px;

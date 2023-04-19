@@ -71,7 +71,7 @@ function ProductPage() {
     incQty();
     addItemToCart(product);
     handleSuccess();
-    console.log(cartItems);
+    console.log(product);
   }
 
   function isDisabled() {
@@ -96,7 +96,6 @@ function ProductPage() {
   function handleWish(product) {
     wishList(product);
     setShowImage(!showImage);
-    // console.log(wish)
     console.log(product);
   }
 
@@ -109,12 +108,7 @@ function ProductPage() {
     axios
       .get(`https://course-api.com/react-store-single-product?id=${id}`)
       .then((response) => {
-        // console.log(cartItems);
-        // let availableItem = cartItems.find(
-        //   (item) => item.product.id === response.data.id
-        // );
-        // response.data.quantity = availableItem ? availableItem.quantity : 0
-        // console.log('availableItem', availableItem);
+
         setProduct(response.data);
       });
   }, [id]);

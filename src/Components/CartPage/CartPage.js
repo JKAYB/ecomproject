@@ -91,7 +91,7 @@ function CartPage() {
                   <div className="cart-item-image-container">
                     <img
                       className="cart-item-image"
-                      src={data.product.images && data.product.images[0].url}
+                      src={data.product.images?(data.product.images && data.product.images[0].url):(data.product.image)}
                       onClick={() => details(data.product.id)}
 
                       alt="item img"
