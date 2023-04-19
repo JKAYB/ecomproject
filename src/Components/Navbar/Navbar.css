@@ -10,6 +10,7 @@
     color: black;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .navbar_contents{
@@ -28,12 +29,13 @@
 .brand-name{
     font-family: 'Gilroy-Light', sans-serif;
     font-size: 24px;
-    padding-top: 2px;
+    padding-top: 1px;
     text-decoration: none;
     color: black;
     letter-spacing: 1.5px;
     font-weight: 300px;
     cursor: pointer;
+    padding-right: 25px;
 
 }
 
@@ -58,26 +60,59 @@
   transform: translateY(-2px);
 }
 .navbar-menu-drop{
+  z-index: 1000;
+  margin-bottom: 10px;
   height: 25px;
   margin-top: 5px;
   background-color: transparent;
   border: none;
   width: 100px;
+  padding-top: 2px;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.4px;
   font-family: 'Gilroy-Regular', sans-serif;
   text-transform: capitalize;
+  cursor: pointer;
 
-  
 }
 .navbar-menu-drop:hover{
 color: #f9843b;
 }
 
 .navbar-menu-drop-items{
-  font-size: 8px;
+  font-size: 16px;
+  display: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 200px;
+  padding-left: 10px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
 }
+
+.navbar-menu-drop:hover .navbar-menu-drop-items{
+  display: block ;
+  }
+
+
+.navbar-menu-drop-items:hover {
+  color: #f9843b;
+  cursor: pointer;
+}
+
+.dropdown-container{
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background-color: rgb(71, 71, 71);
+  min-height: 200px;
+  width: 200px;
+  margin-top: 5px;
+  display: none;
+}
+.navbar-menu-drop:hover .dropdown-container{
+  display: block ;
+  }
 
 .search-box{
     margin-left: 0px;

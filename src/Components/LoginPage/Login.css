@@ -132,4 +132,103 @@
     background-color: #e48143;
   }
   
+  @media only screen and (max-width:500px ){
+
+    .login-page{
+      height: 60vh;
+    }
+
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 20px;
+      height: 100%;
+      width: 95%;
+    }
   
+    .google-icon{
+      height: 25px;
+      width: 25px;
+      left: 5%;
+      top: 13px;
+      position: absolute;
+    }
+  
+    .or{
+      text-align: center;
+      font-size: 22px;
+      color: #64748B;
+      font-weight: 100;
+      margin-top: 20px;
+    }
+  
+    .googleSignIn{
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: transparent;
+      color: rgb(93, 93, 93);
+      font-size: 20px;
+      border-radius: 1px;
+      border: 2px solid #808DA0    ;
+    }
+  
+    .googleSignIn:hover{
+      background-color: transparent;
+      color: #1e1e1e;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      
+    }
+    .checkDiv{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+    }
+    .remember-me {
+      font-weight: 100;
+      color: #64748B;
+      font-size: 14px;
+      position: absolute;
+      left: 30px;
+    }
+
+    .checkbox{
+      position: absolute;
+      top: -3px;
+    }
+  
+    .forgot-pass{
+      font-size: 14px;
+      text-decoration: none;
+
+    }
+    
+    .input-login {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-radius: 1px;
+      border: 2px solid #E89F71;
+      padding-left: 15px;
+      font-size: 14px;
+    }
+    .input-login::placeholder{
+      font-size: 14px;
+    }
+    
+    .sign-in-button{
+      margin-top: 30px;
+      width: 80%;
+      margin-left: 10%;
+      font-family: 'Gilroy-Regular', sans-serif;
+    }
+
+  }

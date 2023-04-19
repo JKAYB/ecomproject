@@ -77,7 +77,7 @@ function Navbar() {
   }
 
   const handleOptionProduct = (e) => {
-    const category = e.target.value;
+    const category = e;
     const filteredData = products.filter((item) => {
       return item.category.toLowerCase().includes(category.toLowerCase());
     });
@@ -88,7 +88,7 @@ function Navbar() {
  
 
   const handleOptionCategory = (e) => {
-    const category = e.target.value;
+    const category = e;
     const filteredData = products.filter((item) => {
       return item.category.toLowerCase().includes(category.toLowerCase());
     });
@@ -119,31 +119,35 @@ function Navbar() {
         <li className="brand-name" onClick={home}>
           Funiro.
         </li>
-        <select className="navbar-menu-drop" value="Product" onChange={(e) => handleOptionProduct(e)} >
-          <option>Product</option>
+        <div className="navbar-menu-drop" value="Product"  >
+          Product 
+          <div className="dropdown-container">
+ 
           {category.map((option) => (
-            <option
-             value= {option.category} 
+            <div onClick={(e) => handleOptionProduct(option.category)}
+             
               className="navbar-menu-drop-items"
               key={option.id} 
             >
               {option.category}
-            </option>
+            </div>
           ))}
-        </select>
+          </div>
+        </div>
 
-        <select className="navbar-menu-drop"   onChange={(e) => handleOptionCategory(e)}>
-          <option>Category</option>
-          {category.map((option) => (
-            <option 
-              className="navbar-menu-drop-items"
-              key={option.id}
-              value = {option.category}
-            >
-              {option.category}
-            </option>
-          ))}
-        </select>
+        <div className="navbar-menu-drop"   >
+            Category  
+            <div className="dropdown-container">
+              {category.map((option) => (
+                <div onClick={(e) => handleOptionCategory(option.category)}
+                  className="navbar-menu-drop-items"
+                  key={option.id}  
+                >
+                  {option.category}
+                </div>
+              ))}
+            </div>
+        </div>
         <li className="navbar-menu">Contact Us </li>
       </ul>
   }
