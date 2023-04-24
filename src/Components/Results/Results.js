@@ -19,12 +19,13 @@ function Results() {
   return (
     <div className="result-page">
       <Navbar />
+      <div className="result-page-container">
       <h2 className="result-head">Search Results ...</h2>
       <div className="products-list">
         {search.map((item) => {
           return (
             <span
-              className="product-list-content"
+              className="product-list-content-results"
               key={item.id}
               onClick={() => shopnow(item.id)}
             >
@@ -44,7 +45,7 @@ function Results() {
           );
         })}
       </div>
-      
+      </div>
       <RecentlyViewed  head={"Recently Viewed"}/>
       <Footer/>
     </div>

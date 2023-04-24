@@ -218,7 +218,7 @@ function LandingPage() {
                               ></img>
                             ) : (
                               <img
-                                className="wishlist-icon"
+                                className="wishlist-like"
                                 src={wishIcon}
                                 alt="wishlist"
                                 onClick={() => handleWish(product)}
@@ -226,7 +226,7 @@ function LandingPage() {
                             )
                           ) : (
                             <img
-                              className="wishlist-icon"
+                              className="wishlist-like"
                               src={wishIcon}
                               alt="wishlist"
                               onClick={() => handleWish(product)}

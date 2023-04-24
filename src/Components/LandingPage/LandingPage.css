@@ -251,16 +251,20 @@
 }
 .product-details-desc-addtocart{
     position: absolute;
-    display: none;
+    opacity: 0;
+    overflow: hidden;
     top: 0px;
     background-color: #000000ab;
-    width: 285px;
-    height: 446px;
+    width: 0px;
+    height: 0px;
     border: 1px solid black;
+    transition:  250ms ease-in;
 }
 
 .product-details-desc:hover .product-details-desc-addtocart{
-    display: block;
+    opacity: 1;
+    width: 285px;
+    height: 446px;
 }
 
 .product-details-desc-addtocart-button{
@@ -275,6 +279,7 @@
     font-family: 'Gilroy-Regular', sans-serif;
     letter-spacing: 0.5px;
     border-radius: 2px;
+    transition: 150ms ease-in;
 }
 
 
@@ -457,18 +462,7 @@
 
     
 }
-/* .tips-carousel{
-    width:1000px;
-    cursor: pointer;
-    height: 330px;
-    overflow: hidden;
 
-} */
-
-/* .carousel-tips{
-    margin-top: 30px;
-    width: 360px;
-} */
 .carouselEnd {
     position: relative;
     height: 400px;

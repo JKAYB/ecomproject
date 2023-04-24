@@ -4,6 +4,10 @@
     background-color: #F5F5F5;
 
 }
+
+.result-page-container{
+    background-color: rgb(255, 255, 255);
+}
 .result-head{
     font-style: normal;
     font-weight: 300;
@@ -14,18 +18,18 @@
     padding-bottom: 30px;
     padding-top: 30px;
 }
-/* .product-list-content{
-    margin-top: 20px;
+.product-list-content-results{
+    margin-bottom: 20px;
     margin-left: 18px;
     height: 446px;
     width: 286px;
     display: flex;
     justify-content: center;
-    background-color: #F4F5F7;
+    background-color: #F4F5F7;    
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
-} */
+}
 
 
 @media only screen and (max-width:500px ){
