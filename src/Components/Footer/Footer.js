@@ -25,7 +25,7 @@ function Footer() {
       <Line/>
       <div className="divLeft">
         <div className='grid-containerLeft'>
-          <h3 className='grid-item-head1' onClick={() => home()}>Funiro.</h3>
+          <h3 className='grid-item-head' onClick={() => home()}>Funiro.</h3>
           <h3 className="grid-item" href="xx">Worldwide furniture store since 2020. We sell over 1000+ branded products on our website</h3>
           <h3 className="grid-item"href="xx">Sawojajar Malang, Indonesia</h3>
           <h3 className="grid-item"href="xx">+6289 456 3455</h3>

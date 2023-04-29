@@ -22,7 +22,7 @@
 }
 
 .grid-containerLeft{
-    margin-left: 120px;
+    margin-left: 25%;
     width: 250px;
     margin-top: 30px;
     font-size: 13px;
@@ -59,7 +59,7 @@
 
 .grid-item-head{
     color: rgb(0, 0, 0);
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 100;
     cursor: pointer;
 
@@ -72,9 +72,6 @@
     text-decoration: none;
 
 }
-/* .grid-item-head1:hover{
-    text-decoration: underline;
-} */
 
 
 
@@ -95,12 +92,62 @@
         padding-top: 40px;
     
     }
+    .grid-containerLeft{
+        margin-left: 15%;
+    }
   
     
    
 }
 
-@media only screen and (max-width:500px){
+@media only screen and (max-width:1080px){
+    .endinfo{
+        width: 100vw;
+
+    }
+    .mainDiv{
+        width: 100%;
+        min-height: 400px;
+        overflow: hidden;
+    }
+    .divLeft{
+        width: 30%;
+        min-height: 400px;
+        overflow: hidden;
+
+
+    }
+  
+    .divRight{
+        min-height: 400px;
+        overflow: hidden;
+        width: 70%;
+        left: 30%;
+    }
+
+    .grid-containerLeft{
+        margin-left: 10%;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1fr;
+        padding-top: 0px;
+        letter-spacing: 0.3px;
+    }
+    .grid-containerRight{
+        margin-left: 4%;
+        font-size: 12px;
+        row-gap: 1fr;
+        padding-top: 0px;
+        letter-spacing: 0.3px;
+    }
+
+    .grid-item-head1{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width:700px){
     
     .endinfo{
         width: 100vw;
@@ -119,7 +166,6 @@
     .grid-containerLeft{
         width: 300px;
         height: 500px;
-
         margin-left: 20px;
         font-size: 16px;
         display: flex;
